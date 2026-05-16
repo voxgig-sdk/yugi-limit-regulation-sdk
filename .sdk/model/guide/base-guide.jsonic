@@ -1,0 +1,32 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 1
+  metrics: count: path: 7
+  metrics: count: method: 7
+
+  entity: currentvector: {
+    path: "/genesys/current.vector.json": {
+      op: list: method: *GET
+    }
+    path: "/master-duel/current.vector.json": {
+      op: list: method: *GET
+    }
+    path: "/ocg-ae/current.vector.json": {
+      op: list: method: *GET
+    }
+    path: "/ocg-cn/current.vector.json": {
+      op: list: method: *GET
+    }
+    path: "/ocg/current.vector.json": {
+      op: list: method: *GET
+    }
+    path: "/rush/current.vector.json": {
+      op: list: method: *GET
+    }
+    path: "/tcg/current.vector.json": {
+      op: list: method: *GET
+    }
+  }
+
+}

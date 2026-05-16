@@ -1,0 +1,22 @@
+# BasicCurrentvectorFlow
+
+main: kit: flow: BasicCurrentvectorFlow:
+{
+  entity: "currentvector",
+  kind: "basic",
+  name: "BasicCurrentvectorFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "currentvector_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCurrentvectorFlow"
+}

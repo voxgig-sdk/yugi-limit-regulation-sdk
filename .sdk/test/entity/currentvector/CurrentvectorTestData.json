@@ -1,0 +1,46 @@
+{
+  "existing": {
+    "currentvector": {
+      "CURRENTVECTOR00": {
+        "effective": "s46",
+        "forbidden": [],
+        "format": "s48",
+        "limited": [],
+        "name": "s4a",
+        "semi_limited": [],
+        "unlimited": []
+      },
+      "CURRENTVECTOR01": {
+        "effective": "s8c",
+        "forbidden": [],
+        "format": "s8e",
+        "limited": [],
+        "name": "s90",
+        "semi_limited": [],
+        "unlimited": []
+      },
+      "CURRENTVECTOR02": {
+        "effective": "sd2",
+        "forbidden": [],
+        "format": "sd4",
+        "limited": [],
+        "name": "sd6",
+        "semi_limited": [],
+        "unlimited": []
+      }
+    }
+  },
+  "new": {
+    "currentvector": {
+      "currentvector_ref01": {
+        "effective": "s118",
+        "forbidden": [],
+        "format": "s11a",
+        "limited": [],
+        "name": "s11c",
+        "semi_limited": [],
+        "unlimited": []
+      }
+    }
+  }
+}

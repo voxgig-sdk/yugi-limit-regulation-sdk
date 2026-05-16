@@ -1,0 +1,284 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Yugi Limit Regulation API",
+    "description": "The API provides access to the Yu-Gi-Oh! Forbidden and Limited Lists, also known as banlists, in a JSON format. It includes lists for various formats such as the Trading Card Game (TCG), Official Card Game (OCG), Master Duel, and Rush Duel. This API is part of the YAML Yugi project and serves limit regulations published to GitHub Pages.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://github.com/DawnbrandBots/yaml-yugi-limit-regulation"
+    },
+    "license": {
+      "name": "AGPL-3.0",
+      "url": "https://www.gnu.org/licenses/agpl-3.0.html"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://dawnbrandbots.github.io/yaml-yugi-limit-regulation",
+      "description": "Production API server hosted on GitHub Pages"
+    }
+  ],
+  "paths": {
+    "/tcg/current.vector.json": {
+      "get": {
+        "summary": "Get Current TCG Banlist",
+        "description": "Returns the most recent effective Forbidden & Limited List for the Yu-Gi-Oh! Trading Card Game (TCG).",
+        "operationId": "getCurrentTCGBanlist",
+        "tags": [
+          "TCG"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with current TCG banlist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LimitRegulation"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Banlist not found"
+          }
+        }
+      }
+    },
+    "/ocg/current.vector.json": {
+      "get": {
+        "summary": "Get Current OCG Banlist",
+        "description": "Returns the most recent effective Forbidden & Limited List for the Yu-Gi-Oh! Official Card Game (OCG).",
+        "operationId": "getCurrentOCGBanlist",
+        "tags": [
+          "OCG"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with current OCG banlist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LimitRegulation"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Banlist not found"
+          }
+        }
+      }
+    },
+    "/ocg-ae/current.vector.json": {
+      "get": {
+        "summary": "Get Current OCG Asian-English Banlist",
+        "description": "Returns the most recent effective Forbidden & Limited List for the Yu-Gi-Oh! Official Card Game Asian-English region.",
+        "operationId": "getCurrentOCGAEBanlist",
+        "tags": [
+          "OCG"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with current OCG-AE banlist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LimitRegulation"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Banlist not found"
+          }
+        }
+      }
+    },
+    "/ocg-cn/current.vector.json": {
+      "get": {
+        "summary": "Get Current OCG China Banlist",
+        "description": "Returns the most recent effective Forbidden & Limited List for the Yu-Gi-Oh! Official Card Game China region.",
+        "operationId": "getCurrentOCGCNBanlist",
+        "tags": [
+          "OCG"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with current OCG China banlist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LimitRegulation"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Banlist not found"
+          }
+        }
+      }
+    },
+    "/rush/current.vector.json": {
+      "get": {
+        "summary": "Get Current Rush Duel Banlist",
+        "description": "Returns the most recent effective Forbidden & Limited List for Yu-Gi-Oh! Rush Duel.",
+        "operationId": "getCurrentRushBanlist",
+        "tags": [
+          "Rush Duel"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with current Rush Duel banlist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LimitRegulation"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Banlist not found"
+          }
+        }
+      }
+    },
+    "/genesys/current.vector.json": {
+      "get": {
+        "summary": "Get Current TCG Genesys Banlist",
+        "description": "Returns the most recent effective Forbidden & Limited List for Yu-Gi-Oh! TCG Genesys format.",
+        "operationId": "getCurrentGenesysBanlist",
+        "tags": [
+          "TCG"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with current TCG Genesys banlist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LimitRegulation"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Banlist not found"
+          }
+        }
+      }
+    },
+    "/master-duel/current.vector.json": {
+      "get": {
+        "summary": "Get Current Master Duel Banlist",
+        "description": "Returns the most recent effective Forbidden & Limited List for the Yu-Gi-Oh! Master Duel video game.",
+        "operationId": "getCurrentMasterDuelBanlist",
+        "tags": [
+          "Master Duel"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with current Master Duel banlist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LimitRegulation"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Banlist not found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "LimitRegulation": {
+        "type": "object",
+        "description": "A Forbidden & Limited List (banlist) containing card limitations for a specific Yu-Gi-Oh! format",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name or identifier of the limit regulation"
+          },
+          "effective": {
+            "type": "string",
+            "format": "date",
+            "description": "Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD)"
+          },
+          "format": {
+            "type": "string",
+            "description": "The game format this limit regulation applies to",
+            "enum": [
+              "TCG",
+              "OCG",
+              "OCG-AE",
+              "OCG-CN",
+              "Rush Duel",
+              "Master Duel",
+              "TCG Genesys"
+            ]
+          },
+          "forbidden": {
+            "type": "array",
+            "description": "List of card IDs that are forbidden (cannot be used)",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "limited": {
+            "type": "array",
+            "description": "List of card IDs that are limited (only 1 copy allowed)",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "semi_limited": {
+            "type": "array",
+            "description": "List of card IDs that are semi-limited (only 2 copies allowed)",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "unlimited": {
+            "type": "array",
+            "description": "List of card IDs that have been moved to unlimited (3 copies allowed)",
+            "items": {
+              "type": "integer"
+            }
+          }
+        },
+        "required": [
+          "effective",
+          "format"
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "TCG",
+      "description": "Trading Card Game (TCG) format banlists"
+    },
+    {
+      "name": "OCG",
+      "description": "Official Card Game (OCG) format banlists for various regions"
+    },
+    {
+      "name": "Master Duel",
+      "description": "Master Duel video game format banlists"
+    },
+    {
+      "name": "Rush Duel",
+      "description": "Rush Duel format banlists"
+    }
+  ],
+  "externalDocs": {
+    "description": "GitHub Repository and Documentation",
+    "url": "https://github.com/DawnbrandBots/yaml-yugi-limit-regulation"
+  }
+}

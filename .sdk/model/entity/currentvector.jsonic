@@ -1,0 +1,140 @@
+# Entity: currentvector
+
+main: kit: entity: currentvector: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "effective"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "forbidden"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "format"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "limited"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "semi_limited"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "unlimited"
+      req: false
+      type: "`$ARRAY`"
+    }
+  ]
+
+  name: "currentvector"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          method: "GET"
+          orig: "/genesys/current.vector.json"
+          parts: [
+            "genesys"
+            "current.vector.json"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          method: "GET"
+          orig: "/master-duel/current.vector.json"
+          parts: [
+            "master-duel"
+            "current.vector.json"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          method: "GET"
+          orig: "/ocg-ae/current.vector.json"
+          parts: [
+            "ocg-ae"
+            "current.vector.json"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          method: "GET"
+          orig: "/ocg-cn/current.vector.json"
+          parts: [
+            "ocg-cn"
+            "current.vector.json"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          method: "GET"
+          orig: "/ocg/current.vector.json"
+          parts: [
+            "ocg"
+            "current.vector.json"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          method: "GET"
+          orig: "/rush/current.vector.json"
+          parts: [
+            "rush"
+            "current.vector.json"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          method: "GET"
+          orig: "/tcg/current.vector.json"
+          parts: [
+            "tcg"
+            "current.vector.json"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

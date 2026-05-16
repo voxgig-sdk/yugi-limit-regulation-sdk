@@ -1,0 +1,27 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://github.com/DawnbrandBots/yaml-yugi-limit-regulation"
+      }
+      description: "The API provides access to the Yu-Gi-Oh! Forbidden and Limited Lists, also known as banlists, in a JSON format. It includes lists for various formats such as the Trading Card Game (TCG), Official Card Game (OCG), Master Duel, and Rush Duel. This API is part of the YAML Yugi project and serves limit regulations published to GitHub Pages."
+      license: {
+        name: "AGPL-3.0"
+        url: "https://www.gnu.org/licenses/agpl-3.0.html"
+      }
+      servers: [
+        {
+          description: "Production API server hosted on GitHub Pages"
+          url: "https://dawnbrandbots.github.io/yaml-yugi-limit-regulation"
+        }
+      ]
+      title: "Yugi Limit Regulation API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}
