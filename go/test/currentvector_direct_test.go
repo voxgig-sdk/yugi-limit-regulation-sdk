@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/yugi-limit-regulation-sdk"
-	"github.com/voxgig-sdk/yugi-limit-regulation-sdk/core"
+	sdk "github.com/voxgig-sdk/yugi-limit-regulation-sdk/go"
+	"github.com/voxgig-sdk/yugi-limit-regulation-sdk/go/core"
 )
 
 func TestCurrentvectorDirect(t *testing.T) {

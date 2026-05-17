@@ -3,7 +3,7 @@ package sdktest
 import (
 	"testing"
 
-	sdk "github.com/voxgig-sdk/yugi-limit-regulation-sdk"
+	sdk "github.com/voxgig-sdk/yugi-limit-regulation-sdk/go"
 )
 
 func TestCustomUtility(t *testing.T) {

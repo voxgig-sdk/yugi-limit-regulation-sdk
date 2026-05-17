@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/yugi-limit-regulation-sdk/core"
+	"github.com/voxgig-sdk/yugi-limit-regulation-sdk/go/core"
 )
 
 type BaseFeature struct {

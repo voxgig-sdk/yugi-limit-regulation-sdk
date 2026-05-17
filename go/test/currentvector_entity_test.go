@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/yugi-limit-regulation-sdk"
-	"github.com/voxgig-sdk/yugi-limit-regulation-sdk/core"
+	sdk "github.com/voxgig-sdk/yugi-limit-regulation-sdk/go"
+	"github.com/voxgig-sdk/yugi-limit-regulation-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/yugi-limit-regulation-sdk/go/utility/struct"
 )
 
 func TestCurrentvectorEntity(t *testing.T) {

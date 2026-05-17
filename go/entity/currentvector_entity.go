@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/yugi-limit-regulation-sdk/core"
+	"github.com/voxgig-sdk/yugi-limit-regulation-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/yugi-limit-regulation-sdk/go/utility/struct"
 )
 
 type CurrentvectorEntity struct {

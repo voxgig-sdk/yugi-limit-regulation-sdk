@@ -3,9 +3,9 @@ package utility
 import (
 	"regexp"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/yugi-limit-regulation-sdk/go/utility/struct"
 
-	"github.com/voxgig-sdk/yugi-limit-regulation-sdk/core"
+	"github.com/voxgig-sdk/yugi-limit-regulation-sdk/go/core"
 )
 
 func makeUrlUtil(ctx *core.Context) (string, error) {
