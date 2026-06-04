@@ -20,8 +20,27 @@ main: {
       ]
       title: "Yugi Limit Regulation API"
       version: "1.0.0"
+      tagline: "Daily-updated JSON banlists (Forbidden & Limited Lists) for Yu-Gi-Oh! TCG, OCG, Master Duel, and Rush Duel"
+      homepage: "https://github.com/DawnbrandBots/yaml-yugi-limit-regulation"
+      docs_url: "https://github.com/DawnbrandBots/yaml-yugi-limit-regulation"
+      license_short: "AGPL-3.0-or-later (code); banlist data sourced from official Konami databases"
+      license_md: `- Source code outside the \`/data\` directory is licensed under **AGPL-3.0-or-later** (see the project's \`COPYING\` file).
+- The collected limit regulation data is derived from official Konami databases; respect Konami's rights when redistributing.
+- This SDK is an independent client and is not affiliated with or endorsed by Konami.`
+      about_md: `The Yugi Limit Regulation API is an automatically-updated database and JSON feed of Yu-Gi-Oh! Forbidden & Limited Lists ("banlists", or "Limit Regulations") maintained as part of the [YAML Yugi](https://github.com/DawnbrandBots/yaml-yugi-limit-regulation) project by [DawnbrandBots](https://github.com/DawnbrandBots). It is published as static JSON via GitHub Pages at \`https://dawnbrandbots.github.io/yaml-yugi-limit-regulation\`.
+
+What you get from the API:
+
+- Current banlists for each major Yu-Gi-Oh! variant: **TCG**, **OCG** (Japan), **OCG Asian-English**, **OCG China**, **Rush Duel**, **TCG Genesys**, and **Master Duel**.
+- Each list is delivered as a \`current.vector.json\` file conforming to a defined schema.
+- When a new regulation has been announced but is not yet effective, an \`upcoming.vector.json\` symlink is published alongside the current list.
+- Historical regulation tracking is available within the repository.
+
+Operational notes: the lists are downloaded and validated daily by automated workflows. CORS is enabled on most endpoints, so the JSON can be fetched directly from browser clients. No authentication is required.`
+      entity_desc: {
+        currentvector: "Represents a single `current.vector.json` banlist document for one game format, served at paths like `/<format>/current.vector.json` (e.g. `/tcg/current.vector.json`, `/ocg/current.vector.json`, `/master-duel/current.vector.json`)."
+      }
+      auth: false
     }
   }
-}
-
 }

@@ -17,9 +17,7 @@ loading a specific record.
 ```ts
 import { YugiLimitRegulationSDK } from 'yugi-limit-regulation'
 
-const client = new YugiLimitRegulationSDK({
-  apikey: process.env.YUGI-LIMIT-REGULATION_APIKEY,
-})
+const client = new YugiLimitRegulationSDK({})
 ```
 
 ### 2. List currentvectors
@@ -84,7 +82,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new YugiLimitRegulationSDK({ apikey: '...' })
+const client = new YugiLimitRegulationSDK()
 const testClient = client.tester()
 ```
 
@@ -120,7 +118,6 @@ const logger = {
 }
 
 const client = new YugiLimitRegulationSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -131,7 +128,6 @@ Create a `.env.local` file at the project root:
 
 ```
 YUGI-LIMIT-REGULATION_TEST_LIVE=TRUE
-YUGI-LIMIT-REGULATION_APIKEY=<your-key>
 ```
 
 Then run:
@@ -149,7 +145,6 @@ cd ts && npm test
 
 ```ts
 new YugiLimitRegulationSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -160,7 +155,6 @@ new YugiLimitRegulationSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
