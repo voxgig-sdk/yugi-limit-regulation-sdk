@@ -1,9 +1,316 @@
 {
-  "name": "yugi-limit-regulation",
-  "origin": "voxgig-sdk",
   "def": "yugi-limit-regulation_0.1.0.json",
   "main": {
+    "def": {
+      "desc": ""
+    },
     "kit": {
+      "config": {
+        "auth": {
+          "prefix": "Bearer"
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ],
+        "headers": {
+          "content-type": "application/json"
+        }
+      },
+      "entity": {
+        "currentvector": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "effective",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "forbidden",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "format",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "limited",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "name",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "semi_limited",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "unlimited",
+              "req": false,
+              "type": "`$ARRAY`"
+            }
+          ],
+          "name": "currentvector",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "GET",
+                  "orig": "/genesys/current.vector.json",
+                  "parts": [
+                    "genesys",
+                    "current.vector.json"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "GET",
+                  "orig": "/master-duel/current.vector.json",
+                  "parts": [
+                    "master-duel",
+                    "current.vector.json"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "GET",
+                  "orig": "/ocg-ae/current.vector.json",
+                  "parts": [
+                    "ocg-ae",
+                    "current.vector.json"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "GET",
+                  "orig": "/ocg-cn/current.vector.json",
+                  "parts": [
+                    "ocg-cn",
+                    "current.vector.json"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "GET",
+                  "orig": "/ocg/current.vector.json",
+                  "parts": [
+                    "ocg",
+                    "current.vector.json"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "GET",
+                  "orig": "/rush/current.vector.json",
+                  "parts": [
+                    "rush",
+                    "current.vector.json"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "GET",
+                  "orig": "/tcg/current.vector.json",
+                  "parts": [
+                    "tcg",
+                    "current.vector.json"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        }
+      },
+      "feature": {
+        "test": {
+          "active": true,
+          "config": {
+            "options": {
+              "active": false
+            }
+          },
+          "hook": {
+            "GetData": {
+              "active": true,
+              "await": false
+            },
+            "GetMatch": {
+              "active": true,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": true,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": true,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PrePoint": {
+              "active": true,
+              "await": false
+            },
+            "PreRequest": {
+              "active": true,
+              "await": false
+            },
+            "PreResponse": {
+              "active": true,
+              "await": false
+            },
+            "PreResult": {
+              "active": true,
+              "await": false
+            },
+            "PreSpec": {
+              "active": true,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": true,
+              "await": false
+            },
+            "SetMatch": {
+              "active": true,
+              "await": false
+            }
+          },
+          "name": "test",
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "In-memory mock transport for testing without a live server",
+          "version": "0.0.1"
+        }
+      },
+      "flow": {
+        "BasicCurrentvectorFlow": {
+          "active": true,
+          "entity": "currentvector",
+          "key$": "BasicCurrentvectorFlow",
+          "kind": "basic",
+          "name": "BasicCurrentvectorFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {},
+              "match": {},
+              "op": "list",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "currentvector_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
       "info": {
         "contact": {
           "url": "https://github.com/DawnbrandBots/yaml-yugi-limit-regulation"
@@ -20,332 +327,35 @@
           }
         ],
         "title": "Yugi Limit Regulation API",
-        "version": "1.0.0",
-        "tagline": "Daily-updated JSON banlists (Forbidden & Limited Lists) for Yu-Gi-Oh! TCG, OCG, Master Duel, and Rush Duel",
-        "homepage": "https://github.com/DawnbrandBots/yaml-yugi-limit-regulation",
-        "docs_url": "https://github.com/DawnbrandBots/yaml-yugi-limit-regulation",
-        "license_short": "AGPL-3.0-or-later (code); banlist data sourced from official Konami databases",
-        "license_md": "- Source code outside the `/data` directory is licensed under **AGPL-3.0-or-later** (see the project's `COPYING` file).\n- The collected limit regulation data is derived from official Konami databases; respect Konami's rights when redistributing.\n- This SDK is an independent client and is not affiliated with or endorsed by Konami.",
-        "about_md": "The Yugi Limit Regulation API is an automatically-updated database and JSON feed of Yu-Gi-Oh! Forbidden & Limited Lists (\"banlists\", or \"Limit Regulations\") maintained as part of the [YAML Yugi](https://github.com/DawnbrandBots/yaml-yugi-limit-regulation) project by [DawnbrandBots](https://github.com/DawnbrandBots). It is published as static JSON via GitHub Pages at `https://dawnbrandbots.github.io/yaml-yugi-limit-regulation`.\n\nWhat you get from the API:\n\n- Current banlists for each major Yu-Gi-Oh! variant: **TCG**, **OCG** (Japan), **OCG Asian-English**, **OCG China**, **Rush Duel**, **TCG Genesys**, and **Master Duel**.\n- Each list is delivered as a `current.vector.json` file conforming to a defined schema.\n- When a new regulation has been announced but is not yet effective, an `upcoming.vector.json` symlink is published alongside the current list.\n- Historical regulation tracking is available within the repository.\n\nOperational notes: the lists are downloaded and validated daily by automated workflows. CORS is enabled on most endpoints, so the JSON can be fetched directly from browser clients. No authentication is required.",
-        "entity_desc": {
-          "currentvector": "Represents a single `current.vector.json` banlist document for one game format, served at paths like `/<format>/current.vector.json` (e.g. `/tcg/current.vector.json`, `/ocg/current.vector.json`, `/master-duel/current.vector.json`)."
-        },
-        "auth": false
+        "version": "1.0.0"
       },
-      "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
-        "headers": {
-          "content-type": "application/json"
-        },
-        "docs_order": [
-          "ts",
-          "py",
-          "php",
-          "go",
-          "rb",
-          "lua"
-        ]
-      },
-      "entity": {
-        "currentvector": {
-          "alias": {
-            "field": {}
-          },
-          "fields": [
-            {
-              "name": "effective",
-              "req": true,
-              "type": "`$STRING`",
-              "active": true
-            },
-            {
-              "name": "forbidden",
-              "req": false,
-              "type": "`$ARRAY`",
-              "active": true
-            },
-            {
-              "name": "format",
-              "req": true,
-              "type": "`$STRING`",
-              "active": true
-            },
-            {
-              "name": "limited",
-              "req": false,
-              "type": "`$ARRAY`",
-              "active": true
-            },
-            {
-              "name": "name",
-              "req": false,
-              "type": "`$STRING`",
-              "active": true
-            },
-            {
-              "name": "semi_limited",
-              "req": false,
-              "type": "`$ARRAY`",
-              "active": true
-            },
-            {
-              "name": "unlimited",
-              "req": false,
-              "type": "`$ARRAY`",
-              "active": true
-            }
-          ],
-          "name": "currentvector",
-          "op": {
-            "list": {
-              "name": "list",
-              "points": [
-                {
-                  "method": "GET",
-                  "orig": "/genesys/current.vector.json",
-                  "parts": [
-                    "genesys",
-                    "current.vector.json"
-                  ],
-                  "transform": {
-                    "req": "`reqdata`",
-                    "res": "`body`"
-                  },
-                  "active": true,
-                  "args": {},
-                  "select": {}
-                },
-                {
-                  "method": "GET",
-                  "orig": "/master-duel/current.vector.json",
-                  "parts": [
-                    "master-duel",
-                    "current.vector.json"
-                  ],
-                  "transform": {
-                    "req": "`reqdata`",
-                    "res": "`body`"
-                  },
-                  "active": true,
-                  "args": {},
-                  "select": {}
-                },
-                {
-                  "method": "GET",
-                  "orig": "/ocg-ae/current.vector.json",
-                  "parts": [
-                    "ocg-ae",
-                    "current.vector.json"
-                  ],
-                  "transform": {
-                    "req": "`reqdata`",
-                    "res": "`body`"
-                  },
-                  "active": true,
-                  "args": {},
-                  "select": {}
-                },
-                {
-                  "method": "GET",
-                  "orig": "/ocg-cn/current.vector.json",
-                  "parts": [
-                    "ocg-cn",
-                    "current.vector.json"
-                  ],
-                  "transform": {
-                    "req": "`reqdata`",
-                    "res": "`body`"
-                  },
-                  "active": true,
-                  "args": {},
-                  "select": {}
-                },
-                {
-                  "method": "GET",
-                  "orig": "/ocg/current.vector.json",
-                  "parts": [
-                    "ocg",
-                    "current.vector.json"
-                  ],
-                  "transform": {
-                    "req": "`reqdata`",
-                    "res": "`body`"
-                  },
-                  "active": true,
-                  "args": {},
-                  "select": {}
-                },
-                {
-                  "method": "GET",
-                  "orig": "/rush/current.vector.json",
-                  "parts": [
-                    "rush",
-                    "current.vector.json"
-                  ],
-                  "transform": {
-                    "req": "`reqdata`",
-                    "res": "`body`"
-                  },
-                  "active": true,
-                  "args": {},
-                  "select": {}
-                },
-                {
-                  "method": "GET",
-                  "orig": "/tcg/current.vector.json",
-                  "parts": [
-                    "tcg",
-                    "current.vector.json"
-                  ],
-                  "transform": {
-                    "req": "`reqdata`",
-                    "res": "`body`"
-                  },
-                  "active": true,
-                  "args": {},
-                  "select": {}
-                }
-              ],
-              "input": "data"
-            }
-          },
-          "active": true,
-          "relations": {
-            "ancestors": []
-          }
-        }
-      },
-      "feature": {
-        "test": {
-          "name": "test",
-          "title": "In-memory mock transport for testing without a live server",
-          "version": "0.0.1",
-          "active": true,
-          "config": {
-            "options": {
-              "active": false
-            }
-          },
-          "hook": {
-            "PostConstruct": {
-              "active": true,
-              "await": false
-            },
-            "PostConstructEntity": {
-              "active": true,
-              "await": false
-            },
-            "SetData": {
-              "active": true,
-              "await": false
-            },
-            "GetData": {
-              "active": true,
-              "await": false
-            },
-            "SetMatch": {
-              "active": true
-            },
-            "GetMatch": {
-              "active": true,
-              "await": false
-            },
-            "PrePoint": {
-              "active": true
-            },
-            "PreSpec": {
-              "active": true,
-              "await": false
-            },
-            "PreRequest": {
-              "active": true,
-              "await": false
-            },
-            "PreResponse": {
-              "active": true,
-              "await": false
-            },
-            "PreResult": {
-              "active": true,
-              "await": false
-            },
-            "PreTarget": {
-              "active": false,
-              "await": false
-            },
-            "PostOperation": {
-              "active": false,
-              "await": false
-            }
-          },
-          "target": {
-            "ts": {
-              "deps": {}
-            },
-            "go": {
-              "deps": {}
-            },
-            "lua": {
-              "deps": {}
-            },
-            "php": {
-              "deps": {}
-            },
-            "py": {
-              "deps": {}
-            },
-            "rb": {
-              "deps": {}
-            },
-            "go-cli": {
-              "deps": {}
-            },
-            "go-mcp": {
-              "deps": {}
-            }
-          }
-        }
-      },
-      "flow": {
-        "BasicCurrentvectorFlow": {
-          "entity": "currentvector",
-          "kind": "basic",
-          "name": "BasicCurrentvectorFlow",
-          "step": [
-            {
-              "op": "list",
-              "valid": [
-                {
-                  "apply": "ItemExists",
-                  "def": {
-                    "ref": "currentvector_ref01"
-                  }
-                }
-              ],
-              "active": true,
-              "match": {},
-              "data": {},
-              "input": {},
-              "spec": []
-            }
-          ],
-          "key$": "BasicCurrentvectorFlow",
-          "active": true,
-          "param": {}
-        }
-      },
+      "option": {},
       "target": {
-        "go-cli": {
-          "title": "Go CLI",
-          "ext": "go",
+        "go": {
+          "active": true,
           "comment": {
             "line": "//"
           },
+          "deps": {},
+          "ext": "go",
           "module": {
             "name": "yugi-limit-regulation"
           },
+          "name": "go",
+          "srcfeature": false,
+          "title": "Golang"
+        },
+        "go-cli": {
+          "active": true,
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "module": {
+            "name": "yugi-limit-regulation"
+          },
+          "name": "go-cli",
           "phase": {
             "entity": {
               "active": false
@@ -360,19 +370,19 @@
               "active": false
             }
           },
-          "deps": {},
-          "name": "go-cli",
-          "active": true
+          "title": "Go CLI"
         },
         "go-mcp": {
-          "title": "Go MCP server",
-          "ext": "go",
+          "active": true,
           "comment": {
             "line": "//"
           },
+          "deps": {},
+          "ext": "go",
           "module": {
             "name": "yugi-limit-regulation"
           },
+          "name": "go-mcp",
           "phase": {
             "entity": {
               "active": false
@@ -387,138 +397,120 @@
               "active": false
             }
           },
-          "deps": {},
-          "name": "go-mcp",
-          "active": true
-        },
-        "ts": {
-          "title": "TypeScript",
-          "ext": "ts",
-          "comment": {
-            "line": "//"
-          },
-          "module": {
-            "name": "yugi-limit-regulation"
-          },
-          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
-          "deps": {
-            "dotenv": {
-              "active": true,
-              "version": "^17.4.2",
-              "kind": "dev"
-            },
-            "typescript": {
-              "active": true,
-              "version": "^5.9.3",
-              "kind": "dev"
-            },
-            "@types/node": {
-              "active": true,
-              "version": "^25.6.0",
-              "kind": "dev"
-            }
-          },
-          "name": "ts",
-          "active": true
-        },
-        "go": {
-          "title": "Golang",
-          "ext": "go",
-          "comment": {
-            "line": "//"
-          },
-          "module": {
-            "name": "yugi-limit-regulation"
-          },
-          "srcfeature": false,
-          "deps": {},
-          "name": "go",
-          "active": true
+          "title": "Go MCP server"
         },
         "lua": {
-          "title": "Lua",
-          "ext": "lua",
+          "active": true,
           "comment": {
             "line": "--"
           },
-          "module": {
-            "name": "yugi-limit-regulation"
-          },
-          "srcfeature": false,
           "deps": {
             "dkjson": {
               "active": true,
-              "version": "2.5",
-              "kind": "prod"
+              "kind": "prod",
+              "version": "2.5"
             }
           },
+          "ext": "lua",
+          "module": {
+            "name": "yugi-limit-regulation"
+          },
           "name": "lua",
-          "active": true
+          "srcfeature": false,
+          "title": "Lua"
         },
         "php": {
-          "title": "PHP",
-          "ext": "php",
+          "active": true,
           "comment": {
             "line": "//"
           },
+          "deps": {},
+          "ext": "php",
           "module": {
             "name": "yugi-limit-regulation"
           },
-          "srcfeature": false,
-          "deps": {},
           "name": "php",
-          "active": true
+          "srcfeature": false,
+          "title": "PHP"
         },
         "py": {
-          "title": "Python",
-          "ext": "py",
+          "active": true,
           "comment": {
             "line": "#"
           },
-          "module": {
-            "name": "yugi-limit-regulation"
-          },
-          "srcfeature": false,
           "deps": {
             "requests": {
               "active": true,
-              "version": "2.33",
-              "kind": "prod"
+              "kind": "prod",
+              "version": "2.33"
             }
           },
-          "name": "py",
-          "active": true
-        },
-        "rb": {
-          "title": "Ruby",
-          "ext": "rb",
-          "comment": {
-            "line": "#"
-          },
+          "ext": "py",
           "module": {
             "name": "yugi-limit-regulation"
           },
+          "name": "py",
           "srcfeature": false,
+          "title": "Python"
+        },
+        "rb": {
+          "active": true,
+          "comment": {
+            "line": "#"
+          },
           "deps": {
-            "voxgig-struct": {
-              "active": true,
-              "version": "0.0.10",
-              "kind": "prod"
-            },
             "json": {
               "active": true,
-              "version": "0",
-              "kind": "prod"
+              "kind": "prod",
+              "version": "0"
+            },
+            "voxgig-struct": {
+              "active": true,
+              "kind": "prod",
+              "version": "0.0.10"
             }
           },
+          "ext": "rb",
+          "module": {
+            "name": "yugi-limit-regulation"
+          },
           "name": "rb",
-          "active": true
+          "srcfeature": false,
+          "title": "Ruby"
+        },
+        "ts": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {
+            "@types/node": {
+              "active": true,
+              "kind": "dev",
+              "version": "^25.6.0"
+            },
+            "dotenv": {
+              "active": true,
+              "kind": "dev",
+              "version": "^17.4.2"
+            },
+            "typescript": {
+              "active": true,
+              "kind": "dev",
+              "version": "^5.9.3"
+            }
+          },
+          "ext": "ts",
+          "module": {
+            "name": "yugi-limit-regulation"
+          },
+          "name": "ts",
+          "title": "TypeScript"
         }
-      },
-      "option": {}
-    },
-    "def": {
-      "desc": ""
+      }
     }
-  }
+  },
+  "name": "yugi-limit-regulation",
+  "origin": "voxgig-sdk"
 }

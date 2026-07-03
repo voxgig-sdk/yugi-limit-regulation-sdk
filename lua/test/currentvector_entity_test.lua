@@ -92,6 +92,7 @@ function currentvector_basic_setup(extra)
     ["YUGILIMITREGULATION_TEST_CURRENTVECTOR_ENTID"] = idmap,
     ["YUGILIMITREGULATION_TEST_LIVE"] = "FALSE",
     ["YUGILIMITREGULATION_TEST_EXPLAIN"] = "FALSE",
+    ["YUGILIMITREGULATION_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -103,6 +104,7 @@ function currentvector_basic_setup(extra)
   if env["YUGILIMITREGULATION_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
+        apikey = env["YUGILIMITREGULATION_APIKEY"],
       },
       extra or {},
     })

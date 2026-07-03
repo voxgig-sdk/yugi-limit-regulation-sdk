@@ -68,12 +68,14 @@ function currentvector_direct_setup($mockres)
     $env = Runner::env_override([
         "YUGILIMITREGULATION_TEST_CURRENTVECTOR_ENTID" => [],
         "YUGILIMITREGULATION_TEST_LIVE" => "FALSE",
+        "YUGILIMITREGULATION_APIKEY" => "NONE",
     ]);
 
     $live = $env["YUGILIMITREGULATION_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
+            "apikey" => $env["YUGILIMITREGULATION_APIKEY"],
         ];
         $client = new YugiLimitRegulationSDK($merged_opts);
         return [

@@ -119,6 +119,7 @@ func currentvectorBasicSetup(extra map[string]any) *entityTestSetup {
 		"YUGILIMITREGULATION_TEST_CURRENTVECTOR_ENTID": idmap,
 		"YUGILIMITREGULATION_TEST_LIVE":      "FALSE",
 		"YUGILIMITREGULATION_TEST_EXPLAIN":   "FALSE",
+		"YUGILIMITREGULATION_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["YUGILIMITREGULATION_TEST_CURRENTVECTOR_ENTID"])
@@ -129,6 +130,7 @@ func currentvectorBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["YUGILIMITREGULATION_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["YUGILIMITREGULATION_APIKEY"],
 			},
 			extra,
 		})

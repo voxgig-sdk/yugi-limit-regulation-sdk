@@ -79,12 +79,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'YUGILIMITREGULATION_TEST_CURRENTVECTOR_ENTID': {},
     'YUGILIMITREGULATION_TEST_LIVE': 'FALSE',
+    'YUGILIMITREGULATION_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.YUGILIMITREGULATION_TEST_LIVE
 
   if (live) {
     const client = new YugiLimitRegulationSDK({
+      apikey: env.YUGILIMITREGULATION_APIKEY,
     })
 
     let idmap: any = env['YUGILIMITREGULATION_TEST_CURRENTVECTOR_ENTID']
