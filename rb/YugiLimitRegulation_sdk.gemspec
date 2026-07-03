@@ -2,9 +2,17 @@ Gem::Specification.new do |spec|
   spec.name          = "voxgig-sdk-yugi-limit-regulation"
   spec.version       = "0.0.1"
   spec.authors       = ["Voxgig"]
-  spec.summary       = "YugiLimitRegulation SDK for Ruby"
+  spec.summary       = "Unofficial generated Ruby SDK for the Yugi Limit Regulation public API. Not affiliated with or endorsed by the upstream API provider."
+  spec.description   = "Unofficial generated Ruby SDK for the Yugi Limit Regulation public API. Not affiliated with or endorsed by the upstream API provider."
   spec.license       = "MIT"
   spec.homepage      = "https://github.com/voxgig-sdk/yugi-limit-regulation-sdk"
+  spec.metadata      = {
+    "homepage_uri"          => "https://github.com/voxgig-sdk/yugi-limit-regulation-sdk",
+    "source_code_uri"       => "https://github.com/voxgig-sdk/yugi-limit-regulation-sdk",
+    "bug_tracker_uri"       => "https://github.com/voxgig-sdk/yugi-limit-regulation-sdk/issues",
+    "changelog_uri"         => "https://github.com/voxgig-sdk/yugi-limit-regulation-sdk/blob/main/CHANGELOG.md",
+    "rubygems_mfa_required" => "true"
+  }
 
   spec.files         = Dir["lib/**/*.rb", "*.rb"]
   spec.require_paths = ["."]

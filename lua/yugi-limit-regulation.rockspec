@@ -8,12 +8,14 @@ source = {
   dir = "yugi-limit-regulation-sdk/lua"
 }
 description = {
-  summary = "YugiLimitRegulation SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the Yugi Limit Regulation public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/yugi-limit-regulation-sdk",
+  issues_url = "https://github.com/voxgig-sdk/yugi-limit-regulation-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "yugi-limit-regulation" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {

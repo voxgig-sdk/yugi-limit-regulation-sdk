@@ -10,7 +10,7 @@ The TypeScript SDK for the YugiLimitRegulation API — a type-safe, entity-orien
 
 ## Install
 ```bash
-npm install yugi-limit-regulation
+npm install @voxgig-sdk/yugi-limit-regulation
 ```
 ## Tutorial: your first API call
 

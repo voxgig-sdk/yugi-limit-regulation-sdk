@@ -10,7 +10,7 @@ The PHP SDK for the YugiLimitRegulation API — an entity-oriented client using 
 
 ## Install
 ```bash
-composer require voxgig/yugi-limit-regulation-sdk
+composer require voxgig-sdk/yugi-limit-regulation
 ```
 
 

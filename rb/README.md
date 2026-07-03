@@ -10,13 +10,13 @@ The Ruby SDK for the YugiLimitRegulation API — an entity-oriented client using
 
 ## Install
 ```bash
-gem install yugi-limit-regulation-sdk
+gem install voxgig-sdk-yugi-limit-regulation
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "yugi-limit-regulation-sdk"
+gem "voxgig-sdk-yugi-limit-regulation"
 ```
 
 Then run:

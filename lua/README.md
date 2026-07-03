@@ -10,7 +10,7 @@ The Lua SDK for the YugiLimitRegulation API — an entity-oriented client using 
 
 ## Install
 ```bash
-luarocks install yugi-limit-regulation-sdk
+luarocks install voxgig-sdk-yugi-limit-regulation
 ```
 
 If the module is not yet published, add the source directory to

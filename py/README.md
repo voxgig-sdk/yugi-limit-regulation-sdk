@@ -10,7 +10,7 @@ The Python SDK for the YugiLimitRegulation API — an entity-oriented client fol
 
 ## Install
 ```bash
-pip install yugi-limit-regulation-sdk
+pip install voxgig-sdk-yugi-limit-regulation
 ```
 
 Or install from source:
