@@ -28,16 +28,14 @@ require_relative "YugiLimitRegulation_sdk"
 client = YugiLimitRegulationSDK.new
 ```
 
-### 2. List currentvectors
+### 2. List currentvector records
 
 ```ruby
 begin
-  result = client.currentvector.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of Currentvector records — iterate directly.
+  currentvectors = client.Currentvector.list
+  currentvectors.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -85,13 +83,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = YugiLimitRegulationSDK.test
+client = YugiLimitRegulationSDK.test({
+  "entity" => { "currentvector" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.currentvector.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+currentvector = client.Currentvector.load({ "id" => "test01" })
+puts currentvector
 ```
 
 ### Use a custom fetch function
@@ -229,7 +231,7 @@ API path: `/genesys/current.vector.json`
 
 ### Currentvector
 
-Create an instance: `const currentvector = client.currentvector`
+Create an instance: `currentvector = client.Currentvector`
 
 #### Operations
 
@@ -251,8 +253,9 @@ Create an instance: `const currentvector = client.currentvector`
 
 #### Example: List
 
-```ts
-const currentvectors = await client.currentvector.list()
+```ruby
+# list returns an Array of Currentvector records (raises on error).
+currentvectors = client.Currentvector.list
 ```
 
 
@@ -327,7 +330,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-currentvector = client.currentvector
+currentvector = client.Currentvector
 currentvector.load({ "id" => "example_id" })
 
 # currentvector.data_get now returns the loaded currentvector data

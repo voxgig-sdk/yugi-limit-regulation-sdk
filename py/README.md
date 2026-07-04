@@ -31,14 +31,16 @@ from yugilimitregulation_sdk import YugiLimitRegulationSDK
 client = YugiLimitRegulationSDK()
 ```
 
-### 2. List currentvectors
+### 2. List currentvector records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.currentvector.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    currentvectors = client.Currentvector().list({})
+    for currentvector in currentvectors:
+        print(currentvector)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -86,8 +88,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = YugiLimitRegulationSDK.test()
 
-result = client.currentvector.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+currentvector = client.Currentvector().load({"id": "test01"})
+# currentvector contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -226,7 +229,7 @@ API path: `/genesys/current.vector.json`
 
 ### Currentvector
 
-Create an instance: `const currentvector = client.currentvector`
+Create an instance: `currentvector = client.Currentvector()`
 
 #### Operations
 
@@ -248,8 +251,8 @@ Create an instance: `const currentvector = client.currentvector`
 
 #### Example: List
 
-```ts
-const currentvectors = await client.currentvector.list()
+```python
+currentvectors = client.Currentvector().list({})
 ```
 
 
@@ -323,7 +326,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-currentvector = client.currentvector
+currentvector = client.Currentvector()
 currentvector.load({"id": "example_id"})
 
 # currentvector.data_get() now returns the loaded currentvector data

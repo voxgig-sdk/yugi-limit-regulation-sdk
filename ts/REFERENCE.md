@@ -109,7 +109,7 @@ Alias for `YugiLimitRegulationSDK.test()`.
 ## CurrentvectorEntity
 
 ```ts
-const currentvector = client.currentvector
+const currentvector = client.Currentvector()
 ```
 
 ### Fields
@@ -131,7 +131,7 @@ const currentvector = client.currentvector
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.currentvector.list()
+const results = await client.Currentvector().list()
 ```
 
 ### Common Methods

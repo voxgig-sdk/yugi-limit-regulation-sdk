@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## CurrentvectorEntity
 
 ```lua
-local currentvector = client:currentvector(nil)
+local currentvector = client:Currentvector(nil)
 ```
 
 ### Fields
@@ -105,7 +105,7 @@ local currentvector = client:currentvector(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:currentvector():list()
+local results, err = client:Currentvector():list()
 ```
 
 ### Common Methods

@@ -26,9 +26,11 @@ import { YugiLimitRegulationSDK } from '@voxgig-sdk/yugi-limit-regulation'
 
 const client = new YugiLimitRegulationSDK()
 
-// List all currentvectors
-const currentvectors = await client.currentvector.list()
-console.log(currentvectors.data)
+// List all currentvectors (returns Currentvector[])
+const currentvectors = await client.Currentvector().list()
+for (const currentvector of currentvectors) {
+  console.log(currentvector)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -83,9 +85,10 @@ from yugilimitregulation_sdk import YugiLimitRegulationSDK
 
 client = YugiLimitRegulationSDK()
 
-# List all currentvectors
-currentvectors = client.currentvector.list()
-print(currentvectors)
+# List all currentvectors (returns a list, raises on error)
+currentvectors = client.Currentvector().list({})
+for currentvector in currentvectors:
+    print(currentvector)
 ```
 
 ### PHP
@@ -96,8 +99,8 @@ require_once 'yugilimitregulation_sdk.php';
 
 $client = new YugiLimitRegulationSDK();
 
-// List all currentvectors (throws on error)
-$currentvectors = $client->currentvector()->list();
+// List all currentvectors (returns an array; throws on error)
+$currentvectors = $client->Currentvector()->list();
 print_r($currentvectors);
 ```
 
@@ -120,8 +123,8 @@ require_relative "YugiLimitRegulation_sdk"
 
 client = YugiLimitRegulationSDK.new
 
-# List all currentvectors
-currentvectors = client.currentvector.list
+# List all currentvectors (returns an Array; raises on error)
+currentvectors = client.Currentvector.list
 puts currentvectors
 ```
 
@@ -133,7 +136,7 @@ local sdk = require("yugi-limit-regulation_sdk")
 local client = sdk.new()
 
 -- List all currentvectors
-local currentvectors, err = client:currentvector():list()
+local currentvectors, err = client:Currentvector():list()
 print(currentvectors)
 ```
 
@@ -146,22 +149,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = YugiLimitRegulationSDK.test()
-const result = await client.currentvector.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const currentvector = await client.Currentvector().load({ id: 'test01' })
+// currentvector is a bare Currentvector populated with mock data
+console.log(currentvector)
 ```
 
 ### Python
 
 ```python
 client = YugiLimitRegulationSDK.test()
-result = client.currentvector.load({"id": "test01"})
+currentvector = client.Currentvector().load({"id": "test01"})
+print(currentvector)
 ```
 
 ### PHP
 
 ```php
-$client = YugiLimitRegulationSDK::test();
-$result = $client->currentvector()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = YugiLimitRegulationSDK::test([
+    "entity" => ["currentvector" => ["test01" => ["id" => "test01"]]],
+]);
+$currentvector = $client->Currentvector()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -176,15 +184,18 @@ result, err := client.Currentvector(nil).Load(
 ### Ruby
 
 ```ruby
-client = YugiLimitRegulationSDK.test
-result = client.currentvector.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = YugiLimitRegulationSDK.test({
+  "entity" => { "currentvector" => { "test01" => { "id" => "test01" } } },
+})
+currentvector = client.Currentvector.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:currentvector():load({ id = "test01" })
+local result, err = client:Currentvector():load({ id = "test01" })
 ```
 
 ## How it works
@@ -232,6 +243,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

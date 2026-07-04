@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## CurrentvectorEntity
 
 ```php
-$currentvector = $client->currentvector();
+$currentvector = $client->Currentvector();
 ```
 
 ### Fields
@@ -107,7 +107,7 @@ $currentvector = $client->currentvector();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->currentvector()->list([]);
+$results = $client->Currentvector()->list([]);
 ```
 
 ### Common Methods

@@ -204,14 +204,7 @@ class YugiLimitRegulationSDK {
 
 
 
-  _currentvector?: CurrentvectorEntity
-
-  // Idiomatic facade: `client.currentvector.list()` / `client.currentvector.load({ id })`.
-  get currentvector(): CurrentvectorEntity {
-    return (this._currentvector ??= new CurrentvectorEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.currentvector` instead. */
+  // Entity access: `client.Currentvector().list()` / `client.Currentvector().load({ id })`.
   Currentvector(data?: any) {
     const self = this
     return new CurrentvectorEntity(self,data)

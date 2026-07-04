@@ -220,25 +220,15 @@ class YugiLimitRegulationSDK:
         }
 
 
-    @property
-    def currentvector(self):
-        """Idiomatic facade: client.currentvector.list() / client.currentvector.load({"id": ...})."""
-        from entity.currentvector_entity import CurrentvectorEntity
-        cached = getattr(self, "_currentvector", None)
-        if cached is None:
-            cached = CurrentvectorEntity(self, None)
-            self._currentvector = cached
-        return cached
-
-    def Currentvector(self, data=None):
-        # Deprecated: use client.currentvector instead.
+    def Currentvector(self, data=None) -> "CurrentvectorEntity":
+        """Entity factory: client.Currentvector().list({}) / client.Currentvector().load({"id": ...})."""
         from entity.currentvector_entity import CurrentvectorEntity
         return CurrentvectorEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "YugiLimitRegulationSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class YugiLimitRegulationSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.currentvector_entity import CurrentvectorEntity

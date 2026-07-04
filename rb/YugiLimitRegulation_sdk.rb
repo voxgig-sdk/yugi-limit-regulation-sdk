@@ -208,13 +208,7 @@ class YugiLimitRegulationSDK
   end
 
 
-  # Idiomatic facade: client.currentvector.list / client.currentvector.load({ "id" => ... })
-  def currentvector
-    require_relative 'entity/currentvector_entity'
-    @currentvector ||= CurrentvectorEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.currentvector instead.
+  # Canonical facade: client.Currentvector.list / client.Currentvector.load({ "id" => ... })
   def Currentvector(data = nil)
     require_relative 'entity/currentvector_entity'
     CurrentvectorEntity.new(self, data)

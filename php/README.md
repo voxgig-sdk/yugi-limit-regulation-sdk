@@ -29,18 +29,16 @@ require_once 'yugilimitregulation_sdk.php';
 $client = new YugiLimitRegulationSDK();
 ```
 
-### 2. List currentvectors
+### 2. List currentvector records
 
 ```php
 try {
-    $result = $client->currentvector()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of Currentvector records — iterate directly.
+    $currentvectors = $client->Currentvector()->list();
+    foreach ($currentvectors as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -86,13 +84,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = YugiLimitRegulationSDK::test();
+$client = YugiLimitRegulationSDK::test([
+    "entity" => ["currentvector" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->currentvector()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$currentvector = $client->Currentvector()->load(["id" => "test01"]);
+print_r($currentvector);
 ```
 
 ### Use a custom fetch function
@@ -234,7 +236,7 @@ API path: `/genesys/current.vector.json`
 
 ### Currentvector
 
-Create an instance: `const currentvector = client.currentvector`
+Create an instance: `$currentvector = $client->Currentvector();`
 
 #### Operations
 
@@ -256,8 +258,9 @@ Create an instance: `const currentvector = client.currentvector`
 
 #### Example: List
 
-```ts
-const currentvectors = await client.currentvector.list()
+```php
+// list() returns an array of Currentvector records (throws on error).
+$currentvectors = $client->Currentvector()->list();
 ```
 
 
@@ -332,7 +335,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$currentvector = $client->currentvector();
+$currentvector = $client->Currentvector();
 $currentvector->load(["id" => "example_id"]);
 
 // $currentvector->dataGet() now returns the loaded currentvector data

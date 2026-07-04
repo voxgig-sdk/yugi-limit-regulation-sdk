@@ -86,7 +86,7 @@ same parameters as `direct()`. Raises on error.
 ## CurrentvectorEntity
 
 ```ruby
-currentvector = client.currentvector
+currentvector = client.Currentvector
 ```
 
 ### Fields
@@ -108,7 +108,7 @@ currentvector = client.currentvector
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.currentvector.list(nil)
+results = client.Currentvector.list(nil)
 ```
 
 ### Common Methods

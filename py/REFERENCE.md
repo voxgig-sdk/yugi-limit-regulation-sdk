@@ -80,7 +80,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## CurrentvectorEntity
 
 ```python
-currentvector = client.currentvector
+currentvector = client.Currentvector()
 ```
 
 ### Fields
@@ -102,7 +102,9 @@ currentvector = client.currentvector
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.currentvector.list({})
+results = client.Currentvector().list({})
+for currentvector in results:
+    print(currentvector)
 ```
 
 ### Common Methods

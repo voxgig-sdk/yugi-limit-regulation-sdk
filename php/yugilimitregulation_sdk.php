@@ -233,10 +233,10 @@ class YugiLimitRegulationSDK
 
     private $_currentvector = null;
 
-    // Idiomatic facade: $client->currentvector()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Currentvector() (PHP method
-    // names are case-insensitive).
-    public function currentvector($data = null)
+    // Canonical facade: $client->Currentvector()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->currentvector()
+    // resolves here too.
+    public function Currentvector($data = null)
     {
         require_once __DIR__ . '/entity/currentvector_entity.php';
         if ($data === null) {
