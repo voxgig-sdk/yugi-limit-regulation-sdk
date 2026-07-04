@@ -2,6 +2,8 @@
 
 import { CurrentvectorEntity } from './entity/CurrentvectorEntity'
 
+export type * from './YugiLimitRegulationTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class YugiLimitRegulationSDK {
 
 
 
+  _currentvector?: CurrentvectorEntity
+
+  // Idiomatic facade: `client.currentvector.list()` / `client.currentvector.load({ id })`.
+  get currentvector(): CurrentvectorEntity {
+    return (this._currentvector ??= new CurrentvectorEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.currentvector` instead. */
   Currentvector(data?: any) {
     const self = this
     return new CurrentvectorEntity(self,data)

@@ -93,14 +93,12 @@ func currentvectorDirectSetup(mockres any) *currentvectorDirectSetupResult {
 	env := envOverride(map[string]any{
 		"YUGILIMITREGULATION_TEST_CURRENTVECTOR_ENTID": map[string]any{},
 		"YUGILIMITREGULATION_TEST_LIVE":    "FALSE",
-		"YUGILIMITREGULATION_APIKEY":       "NONE",
 	})
 
 	live := env["YUGILIMITREGULATION_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["YUGILIMITREGULATION_APIKEY"],
 		}
 		client := sdk.NewYugiLimitRegulationSDK(mergedOpts)
 

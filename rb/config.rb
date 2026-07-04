@@ -15,9 +15,6 @@ module YugiLimitRegulationConfig
       },
       "options" => {
         "base" => "https://dawnbrandbots.github.io/yaml-yugi-limit-regulation",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },

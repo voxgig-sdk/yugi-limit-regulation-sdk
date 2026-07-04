@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch CurrentvectorListMatch
+---@param ctrl? table
+---@return Currentvector[]
+---@return string? err
 function CurrentvectorEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

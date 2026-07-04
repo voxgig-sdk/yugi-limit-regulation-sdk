@@ -245,6 +245,9 @@ func (sdk *YugiLimitRegulationSDK) Direct(fetchargs map[string]any) (map[string]
 }
 
 
+// Currentvector returns a Currentvector entity bound to this client.
+// Idiomatic usage: client.Currentvector(nil).List(nil, nil) or
+// client.Currentvector(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *YugiLimitRegulationSDK) Currentvector(data map[string]any) YugiLimitRegulationEntity {
 	return NewCurrentvectorEntityFunc(sdk, data)
 }

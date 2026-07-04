@@ -50,8 +50,7 @@ class TestCurrentvectorEntity:
         currentvector_ref01_ent = client.Currentvector(None)
         currentvector_ref01_match = {}
 
-        currentvector_ref01_list_result, err = currentvector_ref01_ent.list(currentvector_ref01_match, None)
-        assert err is None
+        currentvector_ref01_list_result = currentvector_ref01_ent.list(currentvector_ref01_match, None)
         assert isinstance(currentvector_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _currentvector_basic_setup(extra):
         "YUGILIMITREGULATION_TEST_CURRENTVECTOR_ENTID": idmap,
         "YUGILIMITREGULATION_TEST_LIVE": "FALSE",
         "YUGILIMITREGULATION_TEST_EXPLAIN": "FALSE",
-        "YUGILIMITREGULATION_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _currentvector_basic_setup(extra):
     if env.get("YUGILIMITREGULATION_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("YUGILIMITREGULATION_APIKEY"),
             },
             extra or {},
         ])

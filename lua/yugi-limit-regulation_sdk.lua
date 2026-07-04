@@ -244,6 +244,19 @@ end
 
 
 
+-- Idiomatic facade: client:currentvector():list() / client:currentvector():load({ id = ... })
+function YugiLimitRegulationSDK:currentvector(data)
+  local EntityMod = require("entity.currentvector_entity")
+  if data == nil then
+    if self._currentvector == nil then
+      self._currentvector = EntityMod.new(self, nil)
+    end
+    return self._currentvector
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:currentvector() instead.
 function YugiLimitRegulationSDK:Currentvector(data)
   local EntityMod = require("entity.currentvector_entity")
   return EntityMod.new(self, data)

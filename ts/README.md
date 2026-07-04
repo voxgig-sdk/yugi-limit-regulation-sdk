@@ -9,9 +9,12 @@ The TypeScript SDK for the YugiLimitRegulation API — a type-safe, entity-orien
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/yugi-limit-regulation
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/yugi-limit-regulation-sdk/releases](https://github.com/voxgig-sdk/yugi-limit-regulation-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { YugiLimitRegulationSDK } from 'yugi-limit-regulation'
+import { YugiLimitRegulationSDK } from '@voxgig-sdk/yugi-limit-regulation'
 
-const client = new YugiLimitRegulationSDK({
-  apikey: process.env.YUGI-LIMIT-REGULATION_APIKEY,
-})
+const client = new YugiLimitRegulationSDK()
 ```
 
 ### 2. List currentvectors
 
 ```ts
-const result = await client.Currentvector().list()
+const result = await client.currentvector.list()
 
 if (result.ok) {
   for (const item of result.data) {
@@ -81,7 +82,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = YugiLimitRegulationSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.currentvector.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -89,7 +90,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new YugiLimitRegulationSDK({ apikey: '...' })
+const client = new YugiLimitRegulationSDK()
 const testClient = client.tester()
 ```
 
@@ -98,7 +99,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.currentvector
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -125,7 +126,6 @@ const logger = {
 }
 
 const client = new YugiLimitRegulationSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -135,8 +135,7 @@ const client = new YugiLimitRegulationSDK({
 Create a `.env.local` file at the project root:
 
 ```
-YUGI-LIMIT-REGULATION_TEST_LIVE=TRUE
-YUGI-LIMIT-REGULATION_APIKEY=<your-key>
+YUGI_LIMIT_REGULATION_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -154,7 +153,6 @@ cd ts && npm test
 
 ```ts
 new YugiLimitRegulationSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -165,7 +163,6 @@ new YugiLimitRegulationSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -274,7 +271,7 @@ API path: `/genesys/current.vector.json`
 
 ### Currentvector
 
-Create an instance: `const currentvector = client.Currentvector()`
+Create an instance: `const currentvector = client.currentvector`
 
 #### Operations
 
@@ -297,7 +294,7 @@ Create an instance: `const currentvector = client.Currentvector()`
 #### Example: List
 
 ```ts
-const currentvectors = await client.Currentvector().list()
+const currentvectors = await client.currentvector.list()
 ```
 
 
@@ -358,7 +355,7 @@ yugi-limit-regulation/
 Import the SDK from the package root:
 
 ```ts
-import { YugiLimitRegulationSDK } from 'yugi-limit-regulation'
+import { YugiLimitRegulationSDK } from '@voxgig-sdk/yugi-limit-regulation'
 ```
 
 ### Entity state
@@ -368,11 +365,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const currentvector = client.currentvector
+await currentvector.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// currentvector.data() now returns the loaded currentvector data
+// currentvector.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

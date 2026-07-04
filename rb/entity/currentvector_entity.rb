@@ -45,6 +45,7 @@ class CurrentvectorEntity
     end
   end
 
+  # @return [Currentvector, Hash] the current Currentvector data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class CurrentvectorEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Currentvector fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -65,6 +67,11 @@ class CurrentvectorEntity
   
 
   
+  # List Currentvector items matching the given filter.
+  #
+  # @param reqmatch [CurrentvectorListMatch, Hash, nil] match filter (any subset of Currentvector fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<Currentvector>, Array] the matching Currentvector items; raises YugiLimitRegulationError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

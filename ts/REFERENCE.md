@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -110,7 +109,7 @@ Alias for `YugiLimitRegulationSDK.test()`.
 ## CurrentvectorEntity
 
 ```ts
-const currentvector = client.Currentvector()
+const currentvector = client.currentvector
 ```
 
 ### Fields
@@ -132,7 +131,7 @@ const currentvector = client.Currentvector()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Currentvector().list()
+const results = await client.currentvector.list()
 ```
 
 ### Common Methods

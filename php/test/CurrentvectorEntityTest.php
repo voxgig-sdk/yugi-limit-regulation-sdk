@@ -50,8 +50,7 @@ class CurrentvectorEntityTest extends TestCase
         $currentvector_ref01_ent = $client->Currentvector(null);
         $currentvector_ref01_match = [];
 
-        [$currentvector_ref01_list_result, $err] = $currentvector_ref01_ent->list($currentvector_ref01_match, null);
-        $this->assertNull($err);
+        $currentvector_ref01_list_result = $currentvector_ref01_ent->list($currentvector_ref01_match, null);
         $this->assertIsArray($currentvector_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function currentvector_basic_setup($extra)
         "YUGILIMITREGULATION_TEST_CURRENTVECTOR_ENTID" => $idmap,
         "YUGILIMITREGULATION_TEST_LIVE" => "FALSE",
         "YUGILIMITREGULATION_TEST_EXPLAIN" => "FALSE",
-        "YUGILIMITREGULATION_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function currentvector_basic_setup($extra)
     if ($env["YUGILIMITREGULATION_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["YUGILIMITREGULATION_APIKEY"],
             ],
             $extra ?? [],
         ]);

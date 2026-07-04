@@ -113,7 +113,6 @@ function basicSetup(extra?: any) {
     'YUGI_LIMIT_REGULATION_TEST_CURRENTVECTOR_ENTID': idmap,
     'YUGI_LIMIT_REGULATION_TEST_LIVE': 'FALSE',
     'YUGI_LIMIT_REGULATION_TEST_EXPLAIN': 'FALSE',
-    'YUGI_LIMIT_REGULATION_APIKEY': 'NONE',
   })
 
   idmap = env['YUGI_LIMIT_REGULATION_TEST_CURRENTVECTOR_ENTID']
@@ -123,7 +122,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new YugiLimitRegulationSDK(merge([
       {
-        apikey: env.YUGI_LIMIT_REGULATION_APIKEY,
       },
       extra
     ]))
