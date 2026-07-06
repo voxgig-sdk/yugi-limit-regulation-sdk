@@ -8,7 +8,7 @@ Complete API reference for the YugiLimitRegulation Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'yugi-limit-regulation_sdk'
+require_relative 'YugiLimitRegulation_sdk'
 
 client = YugiLimitRegulationSDK.new(options)
 ```
@@ -93,22 +93,22 @@ currentvector = client.Currentvector
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective` | ``$STRING`` | Yes |  |
-| `forbidden` | ``$ARRAY`` | No |  |
-| `format` | ``$STRING`` | Yes |  |
-| `limited` | ``$ARRAY`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `semi_limited` | ``$ARRAY`` | No |  |
-| `unlimited` | ``$ARRAY`` | No |  |
+| `effective` | `String` | Yes |  |
+| `forbidden` | `Array` | No |  |
+| `format` | `String` | Yes |  |
+| `limited` | `Array` | No |  |
+| `name` | `String` | No |  |
+| `semi_limited` | `Array` | No |  |
+| `unlimited` | `Array` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Currentvector.list(nil)
+results = client.Currentvector.list
 ```
 
 ### Common Methods

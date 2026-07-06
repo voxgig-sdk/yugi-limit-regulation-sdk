@@ -221,7 +221,7 @@ class YugiLimitRegulationSDK:
 
 
     def Currentvector(self, data=None) -> "CurrentvectorEntity":
-        """Entity factory: client.Currentvector().list({}) / client.Currentvector().load({"id": ...})."""
+        """Entity factory: client.Currentvector().list() / client.Currentvector().load({"id": ...})."""
         from entity.currentvector_entity import CurrentvectorEntity
         return CurrentvectorEntity(self, data)
 

@@ -24,7 +24,7 @@ class Currentvector
     public ?array $unlimited = null;
 }
 
-/** Match filter for Currentvector#list (any subset of Currentvector fields). */
+/** Request payload for Currentvector#list. */
 class CurrentvectorListMatch
 {
     public ?string $effective = null;

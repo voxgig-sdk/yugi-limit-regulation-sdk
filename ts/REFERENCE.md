@@ -116,13 +116,13 @@ const currentvector = client.Currentvector()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective` | ``$STRING`` | Yes |  |
-| `forbidden` | ``$ARRAY`` | No |  |
-| `format` | ``$STRING`` | Yes |  |
-| `limited` | ``$ARRAY`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `semi_limited` | ``$ARRAY`` | No |  |
-| `unlimited` | ``$ARRAY`` | No |  |
+| `effective` | `string` | Yes |  |
+| `forbidden` | `any[]` | No |  |
+| `format` | `string` | Yes |  |
+| `limited` | `any[]` | No |  |
+| `name` | `string` | No |  |
+| `semi_limited` | `any[]` | No |  |
+| `unlimited` | `any[]` | No |  |
 
 ### Operations
 

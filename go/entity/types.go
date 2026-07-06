@@ -19,8 +19,7 @@ type Currentvector struct {
 	Unlimited *[]any `json:"unlimited,omitempty"`
 }
 
-// CurrentvectorListMatch mirrors the currentvector fields as an all-optional match
-// filter (Go analog of Partial<Currentvector>).
+// CurrentvectorListMatch is the typed request payload for Currentvector.ListTyped.
 type CurrentvectorListMatch struct {
 	Effective *string `json:"effective,omitempty"`
 	Forbidden *[]any `json:"forbidden,omitempty"`

@@ -16,6 +16,13 @@
 ---@field unlimited? table
 
 ---@class CurrentvectorListMatch
+---@field effective? string
+---@field forbidden? table
+---@field format? string
+---@field limited? table
+---@field name? string
+---@field semi_limited? table
+---@field unlimited? table
 
 local M = {}
 

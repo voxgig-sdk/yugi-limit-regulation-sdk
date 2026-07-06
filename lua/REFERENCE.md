@@ -90,13 +90,13 @@ local currentvector = client:Currentvector(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective` | ``$STRING`` | Yes |  |
-| `forbidden` | ``$ARRAY`` | No |  |
-| `format` | ``$STRING`` | Yes |  |
-| `limited` | ``$ARRAY`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `semi_limited` | ``$ARRAY`` | No |  |
-| `unlimited` | ``$ARRAY`` | No |  |
+| `effective` | `string` | Yes |  |
+| `forbidden` | `table` | No |  |
+| `format` | `string` | Yes |  |
+| `limited` | `table` | No |  |
+| `name` | `string` | No |  |
+| `semi_limited` | `table` | No |  |
+| `unlimited` | `table` | No |  |
 
 ### Operations
 

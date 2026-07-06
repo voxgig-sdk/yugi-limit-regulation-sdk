@@ -8,7 +8,7 @@ Complete API reference for the YugiLimitRegulation Python SDK.
 ### Constructor
 
 ```python
-from yugi-limit-regulation_sdk import YugiLimitRegulationSDK
+from yugilimitregulation_sdk import YugiLimitRegulationSDK
 
 client = YugiLimitRegulationSDK(options)
 ```
@@ -87,22 +87,22 @@ currentvector = client.Currentvector()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective` | ``$STRING`` | Yes |  |
-| `forbidden` | ``$ARRAY`` | No |  |
-| `format` | ``$STRING`` | Yes |  |
-| `limited` | ``$ARRAY`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `semi_limited` | ``$ARRAY`` | No |  |
-| `unlimited` | ``$ARRAY`` | No |  |
+| `effective` | `str` | Yes |  |
+| `forbidden` | `list` | No |  |
+| `format` | `str` | Yes |  |
+| `limited` | `list` | No |  |
+| `name` | `str` | No |  |
+| `semi_limited` | `list` | No |  |
+| `unlimited` | `list` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Currentvector().list({})
+results = client.Currentvector().list()
 for currentvector in results:
     print(currentvector)
 ```

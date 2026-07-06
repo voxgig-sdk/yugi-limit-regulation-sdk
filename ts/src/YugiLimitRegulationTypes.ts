@@ -15,5 +15,13 @@ export interface Currentvector {
   unlimited?: any[]
 }
 
-export type CurrentvectorListMatch = Partial<Currentvector>
+export interface CurrentvectorListMatch {
+  effective?: string
+  forbidden?: any[]
+  format?: string
+  limited?: any[]
+  name?: string
+  semi_limited?: any[]
+  unlimited?: any[]
+}
 
