@@ -19,9 +19,9 @@ main: {
           url: "https://dawnbrandbots.github.io/yaml-yugi-limit-regulation"
         }
       ]
+      summary: "The API provides access to the Yu-Gi-Oh!"
       title: "Yugi Limit Regulation API"
       version: "1.0.0"
+      website: "https://github.com/DawnbrandBots/yaml-yugi-limit-regulation"
     }
   }
-}
-

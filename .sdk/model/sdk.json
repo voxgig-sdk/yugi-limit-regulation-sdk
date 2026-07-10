@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -321,14 +318,17 @@
           "name": "AGPL-3.0",
           "url": "https://www.gnu.org/licenses/agpl-3.0.html"
         },
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production API server hosted on GitHub Pages",
             "url": "https://dawnbrandbots.github.io/yaml-yugi-limit-regulation"
           }
         ],
+        "summary": "The API provides access to the Yu-Gi-Oh!",
         "title": "Yugi Limit Regulation API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://github.com/DawnbrandBots/yaml-yugi-limit-regulation"
       },
       "option": {},
       "target": {
@@ -381,6 +381,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -431,6 +434,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

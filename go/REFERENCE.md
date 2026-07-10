@@ -91,6 +91,7 @@ same parameters as `Direct()`.
 
 ```go
 currentvector := client.Currentvector(nil)
+fmt.Println(currentvector.GetName()) // "currentvector"
 ```
 
 ### Fields
@@ -113,6 +114,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Currentvector(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
