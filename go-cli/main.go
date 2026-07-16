@@ -27,7 +27,20 @@ func main() {
 }
 
 func run(args []string, in io.Reader, out, errOut io.Writer) int {
-	client := sdk.NewYugiLimitRegulationSDK(nil)
+	// Configure from the environment: YUGI_LIMIT_REGULATION_APIKEY carries the API key and
+	// YUGI_LIMIT_REGULATION_BASE optionally overrides the API base URL (e.g. production).
+	// Both injectable by a secrets vault. Unset -> nil config defaults.
+	var opts map[string]any
+	if apikey := os.Getenv("YUGI_LIMIT_REGULATION_APIKEY"); apikey != "" {
+		opts = map[string]any{"apikey": apikey}
+	}
+	if base := os.Getenv("YUGI_LIMIT_REGULATION_BASE"); base != "" {
+		if opts == nil {
+			opts = map[string]any{}
+		}
+		opts["base"] = base
+	}
+	client := sdk.NewYugiLimitRegulationSDK(opts)
 
 	r, err := eng.NewRegistry()
 	if err != nil {
