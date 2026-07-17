@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- YugiLimitRegulation SDK exists test
 
 local sdk = require("yugi-limit-regulation_sdk")
 
