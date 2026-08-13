@@ -70,7 +70,7 @@ describe("CurrentvectorEntity", function()
     -- The basic flow consumes synthetic IDs from the fixture. In live mode
     -- without an *_ENTID env override, those IDs hit the live API and 4xx.
     if setup.synthetic_only then
-      pending("live entity test uses synthetic IDs from fixture — set YUGILIMITREGULATION_TEST_CURRENTVECTOR_ENTID JSON to run live")
+      pending("live entity test uses synthetic IDs from fixture — set YUGI_LIMIT_REGULATION_TEST_CURRENTVECTOR_ENTID JSON to run live")
       return
     end
     local client = setup.client
@@ -126,22 +126,22 @@ function currentvector_basic_setup(extra)
   -- Detect ENTID env override before envOverride consumes it. When live
   -- mode is on without a real override, the basic test runs against synthetic
   -- IDs from the fixture and 4xx's. Surface this so the test can skip.
-  local entid_env_raw = os.getenv("YUGILIMITREGULATION_TEST_CURRENTVECTOR_ENTID")
+  local entid_env_raw = os.getenv("YUGI_LIMIT_REGULATION_TEST_CURRENTVECTOR_ENTID")
   local idmap_overridden = entid_env_raw ~= nil and entid_env_raw:match("^%s*{") ~= nil
 
   local env = runner.env_override({
-    ["YUGILIMITREGULATION_TEST_CURRENTVECTOR_ENTID"] = idmap,
-    ["YUGILIMITREGULATION_TEST_LIVE"] = "FALSE",
-    ["YUGILIMITREGULATION_TEST_EXPLAIN"] = "FALSE",
+    ["YUGI_LIMIT_REGULATION_TEST_CURRENTVECTOR_ENTID"] = idmap,
+    ["YUGI_LIMIT_REGULATION_TEST_LIVE"] = "FALSE",
+    ["YUGI_LIMIT_REGULATION_TEST_EXPLAIN"] = "FALSE",
   })
 
   local idmap_resolved = helpers.to_map(
-    env["YUGILIMITREGULATION_TEST_CURRENTVECTOR_ENTID"])
+    env["YUGI_LIMIT_REGULATION_TEST_CURRENTVECTOR_ENTID"])
   if idmap_resolved == nil then
     idmap_resolved = helpers.to_map(idmap)
   end
 
-  if env["YUGILIMITREGULATION_TEST_LIVE"] == "TRUE" then
+  if env["YUGI_LIMIT_REGULATION_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
       },
@@ -150,13 +150,13 @@ function currentvector_basic_setup(extra)
     client = sdk.new(helpers.to_map(merged_opts))
   end
 
-  local live = env["YUGILIMITREGULATION_TEST_LIVE"] == "TRUE"
+  local live = env["YUGI_LIMIT_REGULATION_TEST_LIVE"] == "TRUE"
   return {
     client = client,
     data = entity_data,
     idmap = idmap_resolved,
     env = env,
-    explain = env["YUGILIMITREGULATION_TEST_EXPLAIN"] == "TRUE",
+    explain = env["YUGI_LIMIT_REGULATION_TEST_EXPLAIN"] == "TRUE",
     live = live,
     synthetic_only = live and not idmap_overridden,
     now = os.time() * 1000,

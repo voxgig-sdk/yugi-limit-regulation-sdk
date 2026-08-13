@@ -43,8 +43,8 @@ class YugiLimitRegulationTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('YUGILIMITREGULATION_TEST_LIVE');
-        $override = self::getenv('YUGILIMITREGULATION_TEST_OVERRIDE');
+        $live = self::getenv('YUGI_LIMIT_REGULATION_TEST_LIVE');
+        $override = self::getenv('YUGI_LIMIT_REGULATION_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class YugiLimitRegulationTestRunner
             }
         }
 
-        $explain = self::getenv('YUGILIMITREGULATION_TEST_EXPLAIN');
+        $explain = self::getenv('YUGI_LIMIT_REGULATION_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['YUGILIMITREGULATION_TEST_EXPLAIN'] = $explain;
+            $m['YUGI_LIMIT_REGULATION_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

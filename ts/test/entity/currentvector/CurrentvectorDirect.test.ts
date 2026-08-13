@@ -19,11 +19,15 @@ import {
 describe('CurrentvectorDirect', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when YUGILIMITREGULATION_TEST_LIVE=TRUE.
-  afterEach(liveDelay('YUGILIMITREGULATION_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when YUGI_LIMIT_REGULATION_TEST_LIVE=TRUE.
+  afterEach(liveDelay('YUGI_LIMIT_REGULATION_TEST_LIVE'))
 
   test('direct-exists', async () => {
     const sdk = new YugiLimitRegulationSDK({
+      // Concrete base: a live construction must satisfy any server
+      // variables a templated base URL declares; overriding base with a
+      // literal (as the direct flow tests do) sidesteps the requirement.
+      base: 'http://localhost:8080',
       system: { fetch: async () => ({}) }
     })
     assert('function' === typeof sdk.direct)
@@ -77,17 +81,17 @@ function directSetup(mockres?: any) {
   const calls: any[] = []
 
   const env = envOverride({
-    'YUGILIMITREGULATION_TEST_CURRENTVECTOR_ENTID': {},
-    'YUGILIMITREGULATION_TEST_LIVE': 'FALSE',
+    'YUGI_LIMIT_REGULATION_TEST_CURRENTVECTOR_ENTID': {},
+    'YUGI_LIMIT_REGULATION_TEST_LIVE': 'FALSE',
   })
 
-  const live = 'TRUE' === env.YUGILIMITREGULATION_TEST_LIVE
+  const live = 'TRUE' === env.YUGI_LIMIT_REGULATION_TEST_LIVE
 
   if (live) {
     const client = new YugiLimitRegulationSDK({
     })
 
-    let idmap: any = env['YUGILIMITREGULATION_TEST_CURRENTVECTOR_ENTID']
+    let idmap: any = env['YUGI_LIMIT_REGULATION_TEST_CURRENTVECTOR_ENTID']
     if ('string' === typeof idmap && idmap.startsWith('{')) {
       idmap = JSON.parse(idmap)
     }

@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# YugiLimitRegulation SDK exists test
 
 import pytest
 from yugilimitregulation_sdk import YugiLimitRegulationSDK

@@ -37,7 +37,7 @@ class CurrentvectorEntity extends YugiLimitRegulationEntityBase<Currentvector> {
 
 
 
-  async list(this: any, reqmatch?: CurrentvectorListMatch, ctrl?: Control): Promise<Currentvector[]> {
+  async list(this: any, reqmatch?: CurrentvectorListMatch, ctrl?: Control): Promise<CurrentvectorEntity[]> {
 
     const utility = this._utility
 

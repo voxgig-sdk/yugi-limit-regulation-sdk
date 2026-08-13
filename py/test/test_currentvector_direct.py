@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from yugilimitregulation_sdk.utility.voxgig_struct import voxgig_struct as vs
 from yugilimitregulation_sdk import YugiLimitRegulationSDK
-from core import helpers
+from yugilimitregulation_sdk.core import helpers
 from test import runner
 
 
@@ -58,11 +58,11 @@ def _currentvector_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "YUGILIMITREGULATION_TEST_CURRENTVECTOR_ENTID": {},
-        "YUGILIMITREGULATION_TEST_LIVE": "FALSE",
+        "YUGI_LIMIT_REGULATION_TEST_CURRENTVECTOR_ENTID": {},
+        "YUGI_LIMIT_REGULATION_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("YUGILIMITREGULATION_TEST_LIVE") == "TRUE"
+    live = env.get("YUGI_LIMIT_REGULATION_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

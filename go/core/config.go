@@ -83,6 +83,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/genesys/current.vector.json",
 								"parts": []any{
@@ -99,6 +100,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/master-duel/current.vector.json",
 								"parts": []any{
@@ -115,6 +117,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/ocg-ae/current.vector.json",
 								"parts": []any{
@@ -131,6 +134,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/ocg-cn/current.vector.json",
 								"parts": []any{
@@ -147,6 +151,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/ocg/current.vector.json",
 								"parts": []any{
@@ -163,6 +168,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/rush/current.vector.json",
 								"parts": []any{
@@ -179,6 +185,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/tcg/current.vector.json",
 								"parts": []any{
@@ -193,7 +200,6 @@ func MakeConfig() map[string]any {
 								"index$": 6,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{

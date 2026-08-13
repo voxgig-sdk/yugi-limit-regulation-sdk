@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import YugiLimitRegulationControl
-from core.error import YugiLimitRegulationError
-from core.result import YugiLimitRegulationResult
-from core.spec import YugiLimitRegulationSpec
+from yugilimitregulation_sdk.config import make_config
+from yugilimitregulation_sdk.features import _make_feature
+from yugilimitregulation_sdk.core.control import YugiLimitRegulationControl
+from yugilimitregulation_sdk.core.error import YugiLimitRegulationError
+from yugilimitregulation_sdk.core.result import YugiLimitRegulationResult
+from yugilimitregulation_sdk.core.spec import YugiLimitRegulationSpec
 
 
 # True when this SDK was generated with the named feature.

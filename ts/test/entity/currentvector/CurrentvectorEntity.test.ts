@@ -26,8 +26,8 @@ import {
 describe('CurrentvectorEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when YUGILIMITREGULATION_TEST_LIVE=TRUE.
-  afterEach(liveDelay('YUGILIMITREGULATION_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when YUGI_LIMIT_REGULATION_TEST_LIVE=TRUE.
+  afterEach(liveDelay('YUGI_LIMIT_REGULATION_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = YugiLimitRegulationSDK.test()
@@ -63,7 +63,7 @@ describe('CurrentvectorEntity', async () => {
     const currentvector_ref01_ent = client.Currentvector()
     const currentvector_ref01_match: any = {}
 
-    const currentvector_ref01_list = await currentvector_ref01_ent.list(currentvector_ref01_match)
+    const currentvector_ref01_list = (await currentvector_ref01_ent.list(currentvector_ref01_match)).map((e: any) => e.data())
 
 
   })

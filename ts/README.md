@@ -35,7 +35,9 @@ const client = new YugiLimitRegulationSDK()
 
 ### 2. List currentvector records
 
-`list()` resolves to an array of Currentvector objects — iterate it directly:
+`list()` resolves to an array of Currentvector ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const currentvectors = await client.Currentvector().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = YugiLimitRegulationSDK.test()
 
 const currentvector = await client.Currentvector().list()
-// currentvector is a bare entity populated with mock response data
+// currentvector is the entity, populated with mock response data
+// — call currentvector.data() for the record itself
 console.log(currentvector)
 ```
 

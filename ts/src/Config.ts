@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'YugiLimitRegulation',
   }
 
 
@@ -113,6 +113,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/genesys/current.vector.json",
               "parts": [
@@ -129,6 +130,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/master-duel/current.vector.json",
               "parts": [
@@ -145,6 +147,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/ocg-ae/current.vector.json",
               "parts": [
@@ -161,6 +164,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/ocg-cn/current.vector.json",
               "parts": [
@@ -177,6 +181,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/ocg/current.vector.json",
               "parts": [
@@ -193,6 +198,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/rush/current.vector.json",
               "parts": [
@@ -209,6 +215,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/tcg/current.vector.json",
               "parts": [

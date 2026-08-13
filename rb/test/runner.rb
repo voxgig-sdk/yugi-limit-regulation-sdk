@@ -23,8 +23,8 @@ module YugiLimitRegulationTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("YUGILIMITREGULATION_TEST_LIVE")
-    override = getenv("YUGILIMITREGULATION_TEST_OVERRIDE")
+    live = getenv("YUGI_LIMIT_REGULATION_TEST_LIVE")
+    override = getenv("YUGI_LIMIT_REGULATION_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module YugiLimitRegulationTestRunner
       end
     end
 
-    explain = getenv("YUGILIMITREGULATION_TEST_EXPLAIN")
-    m["YUGILIMITREGULATION_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("YUGI_LIMIT_REGULATION_TEST_EXPLAIN")
+    m["YUGI_LIMIT_REGULATION_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

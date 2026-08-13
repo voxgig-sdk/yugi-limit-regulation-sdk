@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ YugiLimitRegulationUtility.registrar = ->(u) {
   u.prepare_params = YugiLimitRegulationUtilities::PrepareParams
   u.prepare_path = YugiLimitRegulationUtilities::PreparePath
   u.prepare_query = YugiLimitRegulationUtilities::PrepareQuery
+  u.graphql_body = YugiLimitRegulationUtilities::GraphqlBody
+  u.graphql_errors = YugiLimitRegulationUtilities::GraphqlErrors
   u.result_basic = YugiLimitRegulationUtilities::ResultBasic
   u.result_body = YugiLimitRegulationUtilities::ResultBody
   u.result_headers = YugiLimitRegulationUtilities::ResultHeaders

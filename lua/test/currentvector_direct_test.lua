@@ -61,11 +61,11 @@ function currentvector_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["YUGILIMITREGULATION_TEST_CURRENTVECTOR_ENTID"] = {},
-    ["YUGILIMITREGULATION_TEST_LIVE"] = "FALSE",
+    ["YUGI_LIMIT_REGULATION_TEST_CURRENTVECTOR_ENTID"] = {},
+    ["YUGI_LIMIT_REGULATION_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["YUGILIMITREGULATION_TEST_LIVE"] == "TRUE"
+  local live = env["YUGI_LIMIT_REGULATION_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

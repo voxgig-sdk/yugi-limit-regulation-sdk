@@ -218,9 +218,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local currentvector, err = client:Currentvector():load()
+    local currentvector, err = client:Currentvector():list()
     if err then error(err) end
-    -- currentvector is the loaded record
+    -- currentvector is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.

@@ -16,11 +16,11 @@
 import pytest
 
 from yugilimitregulation_sdk import YugiLimitRegulationSDK
-from core.error import YugiLimitRegulationError
-from core.result import YugiLimitRegulationResult
-from core.response import YugiLimitRegulationResponse
-from core.spec import YugiLimitRegulationSpec
-from feature.base_feature import YugiLimitRegulationBaseFeature
+from yugilimitregulation_sdk.core.error import YugiLimitRegulationError
+from yugilimitregulation_sdk.core.result import YugiLimitRegulationResult
+from yugilimitregulation_sdk.core.response import YugiLimitRegulationResponse
+from yugilimitregulation_sdk.core.spec import YugiLimitRegulationSpec
+from yugilimitregulation_sdk.feature.base_feature import YugiLimitRegulationBaseFeature
 
 
 def _client():
