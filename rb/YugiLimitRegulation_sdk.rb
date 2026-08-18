@@ -28,7 +28,7 @@ class YugiLimitRegulationSDK
     utility = YugiLimitRegulationUtility.new
     @_utility = utility
 
-    config = YugiLimitRegulationConfig.make_config
+    config = YugiLimitRegulationConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

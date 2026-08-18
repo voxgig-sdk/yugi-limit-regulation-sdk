@@ -15,7 +15,7 @@ require_relative "../YugiLimitRegulation_sdk"
 module YugiLimitRegulationFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = YugiLimitRegulationConfig.make_config["feature"]
+    f = YugiLimitRegulationConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

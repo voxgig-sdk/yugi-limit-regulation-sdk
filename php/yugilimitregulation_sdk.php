@@ -40,7 +40,7 @@ class YugiLimitRegulationSDK
         $utility = new YugiLimitRegulationUtility();
         $this->_utility = $utility;
 
-        $config = YugiLimitRegulationConfig::make_config();
+        $config = YugiLimitRegulationConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,
