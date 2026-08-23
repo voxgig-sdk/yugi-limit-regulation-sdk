@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "YugiLimitRegulation",
+			"slug": "yugi-limit-regulation",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -34,31 +37,38 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "effective",
 						"req": true,
+						"short": "Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "forbidden",
+						"short": "List of card IDs that are forbidden (cannot be used)",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "format",
 						"req": true,
+						"short": "The game format this limit regulation applies to",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "limited",
+						"short": "List of card IDs that are limited (only 1 copy allowed)",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "name",
+						"short": "Name or identifier of the limit regulation",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "semi_limited",
+						"short": "List of card IDs that are semi-limited (only 2 copies allowed)",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "unlimited",
+						"short": "List of card IDs that have been moved to unlimited (3 copies allowed)",
 						"type": "`$ARRAY`",
 					},
 				},

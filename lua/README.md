@@ -231,13 +231,13 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `effective` |  |
-| `forbidden` |  |
-| `format` |  |
-| `limited` |  |
-| `name` |  |
-| `semi_limited` |  |
-| `unlimited` |  |
+| `effective` | Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD) |
+| `forbidden` | List of card IDs that are forbidden (cannot be used) |
+| `format` | The game format this limit regulation applies to |
+| `limited` | List of card IDs that are limited (only 1 copy allowed) |
+| `name` | Name or identifier of the limit regulation |
+| `semi_limited` | List of card IDs that are semi-limited (only 2 copies allowed) |
+| `unlimited` | List of card IDs that have been moved to unlimited (3 copies allowed) |
 
 Operations: List.
 
@@ -262,13 +262,13 @@ Create an instance: `local currentvector = client:Currentvector(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effective` | `string` |  |
-| `forbidden` | `table` |  |
-| `format` | `string` |  |
-| `limited` | `table` |  |
-| `name` | `string` |  |
-| `semi_limited` | `table` |  |
-| `unlimited` | `table` |  |
+| `effective` | `string` | Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD) |
+| `forbidden` | `table` | List of card IDs that are forbidden (cannot be used) |
+| `format` | `string` | The game format this limit regulation applies to |
+| `limited` | `table` | List of card IDs that are limited (only 1 copy allowed) |
+| `name` | `string` | Name or identifier of the limit regulation |
+| `semi_limited` | `table` | List of card IDs that are semi-limited (only 2 copies allowed) |
+| `unlimited` | `table` | List of card IDs that have been moved to unlimited (3 copies allowed) |
 
 #### Example: List
 

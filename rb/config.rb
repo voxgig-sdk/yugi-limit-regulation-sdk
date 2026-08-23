@@ -19,6 +19,9 @@ module YugiLimitRegulationConfig
     {
       "main" => {
         "name" => "YugiLimitRegulation",
+        "slug" => "yugi-limit-regulation",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -42,31 +45,38 @@ module YugiLimitRegulationConfig
             {
               "name" => "effective",
               "req" => true,
+              "short" => "Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD)",
               "type" => "`$STRING`",
             },
             {
               "name" => "forbidden",
+              "short" => "List of card IDs that are forbidden (cannot be used)",
               "type" => "`$ARRAY`",
             },
             {
               "name" => "format",
               "req" => true,
+              "short" => "The game format this limit regulation applies to",
               "type" => "`$STRING`",
             },
             {
               "name" => "limited",
+              "short" => "List of card IDs that are limited (only 1 copy allowed)",
               "type" => "`$ARRAY`",
             },
             {
               "name" => "name",
+              "short" => "Name or identifier of the limit regulation",
               "type" => "`$STRING`",
             },
             {
               "name" => "semi_limited",
+              "short" => "List of card IDs that are semi-limited (only 2 copies allowed)",
               "type" => "`$ARRAY`",
             },
             {
               "name" => "unlimited",
+              "short" => "List of card IDs that have been moved to unlimited (3 copies allowed)",
               "type" => "`$ARRAY`",
             },
           ],

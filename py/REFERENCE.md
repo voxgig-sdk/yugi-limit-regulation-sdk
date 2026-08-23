@@ -87,13 +87,13 @@ currentvector = client.Currentvector()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective` | `str` | Yes |  |
-| `forbidden` | `list` | No |  |
-| `format` | `str` | Yes |  |
-| `limited` | `list` | No |  |
-| `name` | `str` | No |  |
-| `semi_limited` | `list` | No |  |
-| `unlimited` | `list` | No |  |
+| `effective` | `str` | Yes | Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD) |
+| `forbidden` | `list` | No | List of card IDs that are forbidden (cannot be used) |
+| `format` | `str` | Yes | The game format this limit regulation applies to |
+| `limited` | `list` | No | List of card IDs that are limited (only 1 copy allowed) |
+| `name` | `str` | No | Name or identifier of the limit regulation |
+| `semi_limited` | `list` | No | List of card IDs that are semi-limited (only 2 copies allowed) |
+| `unlimited` | `list` | No | List of card IDs that have been moved to unlimited (3 copies allowed) |
 
 ### Operations
 

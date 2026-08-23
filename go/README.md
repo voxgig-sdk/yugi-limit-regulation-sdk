@@ -6,7 +6,7 @@ The Golang SDK for the YugiLimitRegulation API — an entity-oriented client usi
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Currentvector(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -260,13 +260,13 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"effective"` |  |
-| `"forbidden"` |  |
-| `"format"` |  |
-| `"limited"` |  |
-| `"name"` |  |
-| `"semi_limited"` |  |
-| `"unlimited"` |  |
+| `"effective"` | Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD) |
+| `"forbidden"` | List of card IDs that are forbidden (cannot be used) |
+| `"format"` | The game format this limit regulation applies to |
+| `"limited"` | List of card IDs that are limited (only 1 copy allowed) |
+| `"name"` | Name or identifier of the limit regulation |
+| `"semi_limited"` | List of card IDs that are semi-limited (only 2 copies allowed) |
+| `"unlimited"` | List of card IDs that have been moved to unlimited (3 copies allowed) |
 
 Operations: List.
 
@@ -291,13 +291,13 @@ Create an instance: `currentvector := client.Currentvector(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effective` | `string` |  |
-| `forbidden` | `[]any` |  |
-| `format` | `string` |  |
-| `limited` | `[]any` |  |
-| `name` | `string` |  |
-| `semi_limited` | `[]any` |  |
-| `unlimited` | `[]any` |  |
+| `effective` | `string` | Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD) |
+| `forbidden` | `[]any` | List of card IDs that are forbidden (cannot be used) |
+| `format` | `string` | The game format this limit regulation applies to |
+| `limited` | `[]any` | List of card IDs that are limited (only 1 copy allowed) |
+| `name` | `string` | Name or identifier of the limit regulation |
+| `semi_limited` | `[]any` | List of card IDs that are semi-limited (only 2 copies allowed) |
+| `unlimited` | `[]any` | List of card IDs that have been moved to unlimited (3 copies allowed) |
 
 #### Example: List
 

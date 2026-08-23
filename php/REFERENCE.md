@@ -92,13 +92,13 @@ $currentvector = $client->Currentvector();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective` | `string` | Yes |  |
-| `forbidden` | `array` | No |  |
-| `format` | `string` | Yes |  |
-| `limited` | `array` | No |  |
-| `name` | `string` | No |  |
-| `semi_limited` | `array` | No |  |
-| `unlimited` | `array` | No |  |
+| `effective` | `string` | Yes | Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD) |
+| `forbidden` | `array` | No | List of card IDs that are forbidden (cannot be used) |
+| `format` | `string` | Yes | The game format this limit regulation applies to |
+| `limited` | `array` | No | List of card IDs that are limited (only 1 copy allowed) |
+| `name` | `string` | No | Name or identifier of the limit regulation |
+| `semi_limited` | `array` | No | List of card IDs that are semi-limited (only 2 copies allowed) |
+| `unlimited` | `array` | No | List of card IDs that have been moved to unlimited (3 copies allowed) |
 
 ### Operations
 

@@ -237,13 +237,13 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `effective` |  |
-| `forbidden` |  |
-| `format` |  |
-| `limited` |  |
-| `name` |  |
-| `semi_limited` |  |
-| `unlimited` |  |
+| `effective` | Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD) |
+| `forbidden` | List of card IDs that are forbidden (cannot be used) |
+| `format` | The game format this limit regulation applies to |
+| `limited` | List of card IDs that are limited (only 1 copy allowed) |
+| `name` | Name or identifier of the limit regulation |
+| `semi_limited` | List of card IDs that are semi-limited (only 2 copies allowed) |
+| `unlimited` | List of card IDs that have been moved to unlimited (3 copies allowed) |
 
 Operations: List.
 
@@ -268,13 +268,13 @@ Create an instance: `currentvector = client.Currentvector`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effective` | `String` |  |
-| `forbidden` | `Array` |  |
-| `format` | `String` |  |
-| `limited` | `Array` |  |
-| `name` | `String` |  |
-| `semi_limited` | `Array` |  |
-| `unlimited` | `Array` |  |
+| `effective` | `String` | Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD) |
+| `forbidden` | `Array` | List of card IDs that are forbidden (cannot be used) |
+| `format` | `String` | The game format this limit regulation applies to |
+| `limited` | `Array` | List of card IDs that are limited (only 1 copy allowed) |
+| `name` | `String` | Name or identifier of the limit regulation |
+| `semi_limited` | `Array` | List of card IDs that are semi-limited (only 2 copies allowed) |
+| `unlimited` | `Array` | List of card IDs that have been moved to unlimited (3 copies allowed) |
 
 #### Example: List
 

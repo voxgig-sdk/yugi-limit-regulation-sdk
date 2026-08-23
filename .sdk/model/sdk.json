@@ -36,42 +36,49 @@
               "active": true,
               "name": "effective",
               "req": true,
+              "short": "Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD)",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "forbidden",
               "req": false,
+              "short": "List of card IDs that are forbidden (cannot be used)",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "format",
               "req": true,
+              "short": "The game format this limit regulation applies to",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "limited",
               "req": false,
+              "short": "List of card IDs that are limited (only 1 copy allowed)",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "name",
               "req": false,
+              "short": "Name or identifier of the limit regulation",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "semi_limited",
               "req": false,
+              "short": "List of card IDs that are semi-limited (only 2 copies allowed)",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "unlimited",
               "req": false,
+              "short": "List of card IDs that have been moved to unlimited (3 copies allowed)",
               "type": "`$ARRAY`"
             }
           ],

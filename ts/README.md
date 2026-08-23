@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -287,13 +287,13 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `effective` |  |
-| `forbidden` |  |
-| `format` |  |
-| `limited` |  |
-| `name` |  |
-| `semi_limited` |  |
-| `unlimited` |  |
+| `effective` | Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD) |
+| `forbidden` | List of card IDs that are forbidden (cannot be used) |
+| `format` | The game format this limit regulation applies to |
+| `limited` | List of card IDs that are limited (only 1 copy allowed) |
+| `name` | Name or identifier of the limit regulation |
+| `semi_limited` | List of card IDs that are semi-limited (only 2 copies allowed) |
+| `unlimited` | List of card IDs that have been moved to unlimited (3 copies allowed) |
 
 Operations: list.
 
@@ -318,13 +318,13 @@ Create an instance: `const currentvector = client.Currentvector()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effective` | `string` |  |
-| `forbidden` | `any[]` |  |
-| `format` | `string` |  |
-| `limited` | `any[]` |  |
-| `name` | `string` |  |
-| `semi_limited` | `any[]` |  |
-| `unlimited` | `any[]` |  |
+| `effective` | `string` | Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD) |
+| `forbidden` | `any[]` | List of card IDs that are forbidden (cannot be used) |
+| `format` | `string` | The game format this limit regulation applies to |
+| `limited` | `any[]` | List of card IDs that are limited (only 1 copy allowed) |
+| `name` | `string` | Name or identifier of the limit regulation |
+| `semi_limited` | `any[]` | List of card IDs that are semi-limited (only 2 copies allowed) |
+| `unlimited` | `any[]` | List of card IDs that have been moved to unlimited (3 copies allowed) |
 
 #### Example: List
 
