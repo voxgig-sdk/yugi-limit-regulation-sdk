@@ -28,6 +28,7 @@ module YugiLimitRegulationConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
