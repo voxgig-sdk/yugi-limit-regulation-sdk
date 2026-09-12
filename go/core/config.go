@@ -36,6 +36,7 @@ func MakeConfig() map[string]any {
 			"currentvector": map[string]any{
 				"fields": []any{
 					map[string]any{
+						"format": "date",
 						"name": "effective",
 						"req": true,
 						"short": "Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD)",
@@ -84,14 +85,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/genesys/current.vector.json",
-								"parts": []any{
-									"genesys",
-									"current.vector.json",
+								"segments": []any{
+									map[string]any{
+										"lit": "genesys",
+									},
+									map[string]any{
+										"lit": "current.vector.json",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"genesys",
+									"current.vector.json",
 								},
 							},
 							map[string]any{
@@ -99,14 +108,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/master-duel/current.vector.json",
-								"parts": []any{
-									"master-duel",
-									"current.vector.json",
+								"segments": []any{
+									map[string]any{
+										"lit": "master-duel",
+									},
+									map[string]any{
+										"lit": "current.vector.json",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"master-duel",
+									"current.vector.json",
 								},
 							},
 							map[string]any{
@@ -114,14 +131,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/ocg-ae/current.vector.json",
-								"parts": []any{
-									"ocg-ae",
-									"current.vector.json",
+								"segments": []any{
+									map[string]any{
+										"lit": "ocg-ae",
+									},
+									map[string]any{
+										"lit": "current.vector.json",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"ocg-ae",
+									"current.vector.json",
 								},
 							},
 							map[string]any{
@@ -129,14 +154,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/ocg-cn/current.vector.json",
-								"parts": []any{
-									"ocg-cn",
-									"current.vector.json",
+								"segments": []any{
+									map[string]any{
+										"lit": "ocg-cn",
+									},
+									map[string]any{
+										"lit": "current.vector.json",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"ocg-cn",
+									"current.vector.json",
 								},
 							},
 							map[string]any{
@@ -144,14 +177,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/ocg/current.vector.json",
-								"parts": []any{
-									"ocg",
-									"current.vector.json",
+								"segments": []any{
+									map[string]any{
+										"lit": "ocg",
+									},
+									map[string]any{
+										"lit": "current.vector.json",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"ocg",
+									"current.vector.json",
 								},
 							},
 							map[string]any{
@@ -159,14 +200,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/rush/current.vector.json",
-								"parts": []any{
-									"rush",
-									"current.vector.json",
+								"segments": []any{
+									map[string]any{
+										"lit": "rush",
+									},
+									map[string]any{
+										"lit": "current.vector.json",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"rush",
+									"current.vector.json",
 								},
 							},
 							map[string]any{
@@ -174,14 +223,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/tcg/current.vector.json",
-								"parts": []any{
-									"tcg",
-									"current.vector.json",
+								"segments": []any{
+									map[string]any{
+										"lit": "tcg",
+									},
+									map[string]any{
+										"lit": "current.vector.json",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"tcg",
+									"current.vector.json",
 								},
 							},
 						},
@@ -193,6 +250,17 @@ func MakeConfig() map[string]any {
 			},
 		},
 	}
+}
+
+// The plugin definitions the model selected per feature, as []any so a
+// feature package can consume them without core naming its types. Empty
+// when no active feature declares active plugin groups for this target.
+var featurePlugins = map[string][]any{
+}
+
+// FeaturePlugins is the definitions list for one feature's chain.
+func FeaturePlugins(name string) []any {
+	return featurePlugins[name]
 }
 
 var (

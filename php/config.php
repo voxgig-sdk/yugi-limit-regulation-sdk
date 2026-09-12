@@ -58,6 +58,7 @@ class YugiLimitRegulationConfig
         'currentvector' => [
           'fields' => [
             [
+              'format' => 'date',
               'name' => 'effective',
               'req' => true,
               'short' => 'Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD)',
@@ -106,14 +107,22 @@ class YugiLimitRegulationConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/genesys/current.vector.json',
-                  'parts' => [
-                    'genesys',
-                    'current.vector.json',
+                  'segments' => [
+                    [
+                      'lit' => 'genesys',
+                    ],
+                    [
+                      'lit' => 'current.vector.json',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'genesys',
+                    'current.vector.json',
                   ],
                 ],
                 [
@@ -121,14 +130,22 @@ class YugiLimitRegulationConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/master-duel/current.vector.json',
-                  'parts' => [
-                    'master-duel',
-                    'current.vector.json',
+                  'segments' => [
+                    [
+                      'lit' => 'master-duel',
+                    ],
+                    [
+                      'lit' => 'current.vector.json',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'master-duel',
+                    'current.vector.json',
                   ],
                 ],
                 [
@@ -136,14 +153,22 @@ class YugiLimitRegulationConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/ocg-ae/current.vector.json',
-                  'parts' => [
-                    'ocg-ae',
-                    'current.vector.json',
+                  'segments' => [
+                    [
+                      'lit' => 'ocg-ae',
+                    ],
+                    [
+                      'lit' => 'current.vector.json',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'ocg-ae',
+                    'current.vector.json',
                   ],
                 ],
                 [
@@ -151,14 +176,22 @@ class YugiLimitRegulationConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/ocg-cn/current.vector.json',
-                  'parts' => [
-                    'ocg-cn',
-                    'current.vector.json',
+                  'segments' => [
+                    [
+                      'lit' => 'ocg-cn',
+                    ],
+                    [
+                      'lit' => 'current.vector.json',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'ocg-cn',
+                    'current.vector.json',
                   ],
                 ],
                 [
@@ -166,14 +199,22 @@ class YugiLimitRegulationConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/ocg/current.vector.json',
-                  'parts' => [
-                    'ocg',
-                    'current.vector.json',
+                  'segments' => [
+                    [
+                      'lit' => 'ocg',
+                    ],
+                    [
+                      'lit' => 'current.vector.json',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'ocg',
+                    'current.vector.json',
                   ],
                 ],
                 [
@@ -181,14 +222,22 @@ class YugiLimitRegulationConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/rush/current.vector.json',
-                  'parts' => [
-                    'rush',
-                    'current.vector.json',
+                  'segments' => [
+                    [
+                      'lit' => 'rush',
+                    ],
+                    [
+                      'lit' => 'current.vector.json',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'rush',
+                    'current.vector.json',
                   ],
                 ],
                 [
@@ -196,14 +245,22 @@ class YugiLimitRegulationConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/tcg/current.vector.json',
-                  'parts' => [
-                    'tcg',
-                    'current.vector.json',
+                  'segments' => [
+                    [
+                      'lit' => 'tcg',
+                    ],
+                    [
+                      'lit' => 'current.vector.json',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'tcg',
+                    'current.vector.json',
                   ],
                 ],
               ],

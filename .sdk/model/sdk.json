@@ -34,6 +34,7 @@
           "fields": [
             {
               "active": true,
+              "format": "date",
               "name": "effective",
               "req": true,
               "short": "Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD)",
@@ -94,9 +95,13 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/genesys/current.vector.json",
-                  "parts": [
-                    "genesys",
-                    "current.vector.json"
+                  "segments": [
+                    {
+                      "lit": "genesys"
+                    },
+                    {
+                      "lit": "current.vector.json"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -110,9 +115,13 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/master-duel/current.vector.json",
-                  "parts": [
-                    "master-duel",
-                    "current.vector.json"
+                  "segments": [
+                    {
+                      "lit": "master-duel"
+                    },
+                    {
+                      "lit": "current.vector.json"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -126,9 +135,13 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/ocg-ae/current.vector.json",
-                  "parts": [
-                    "ocg-ae",
-                    "current.vector.json"
+                  "segments": [
+                    {
+                      "lit": "ocg-ae"
+                    },
+                    {
+                      "lit": "current.vector.json"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -142,9 +155,13 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/ocg-cn/current.vector.json",
-                  "parts": [
-                    "ocg-cn",
-                    "current.vector.json"
+                  "segments": [
+                    {
+                      "lit": "ocg-cn"
+                    },
+                    {
+                      "lit": "current.vector.json"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -158,9 +175,13 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/ocg/current.vector.json",
-                  "parts": [
-                    "ocg",
-                    "current.vector.json"
+                  "segments": [
+                    {
+                      "lit": "ocg"
+                    },
+                    {
+                      "lit": "current.vector.json"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -174,9 +195,13 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/rush/current.vector.json",
-                  "parts": [
-                    "rush",
-                    "current.vector.json"
+                  "segments": [
+                    {
+                      "lit": "rush"
+                    },
+                    {
+                      "lit": "current.vector.json"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -190,9 +215,13 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/tcg/current.vector.json",
-                  "parts": [
-                    "tcg",
-                    "current.vector.json"
+                  "segments": [
+                    {
+                      "lit": "tcg"
+                    },
+                    {
+                      "lit": "current.vector.json"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -272,8 +301,11 @@
             }
           },
           "name": "test",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "go": {
               "deps": {}
@@ -395,6 +427,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -420,6 +455,10 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/runner_test.go",
+            "test/struct_runner_test.go"
+          ],
           "title": "Golang"
         },
         "go-cli": {
@@ -471,6 +510,7 @@
               "active": false
             }
           },
+          "provides": {},
           "publish": {
             "registry": {
               "active": false,
@@ -495,6 +535,7 @@
             },
             "version": "0.0.1"
           },
+          "superseded": [],
           "title": "Go CLI"
         },
         "go-mcp": {
@@ -546,6 +587,7 @@
               "active": false
             }
           },
+          "provides": {},
           "publish": {
             "registry": {
               "active": false,
@@ -570,6 +612,7 @@
             },
             "version": "0.0.1"
           },
+          "superseded": [],
           "title": "Go MCP server"
         },
         "lua": {
@@ -610,6 +653,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -635,6 +681,9 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.lua"
+          ],
           "title": "Lua"
         },
         "php": {
@@ -669,6 +718,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -694,6 +746,9 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/StructRunner.php"
+          ],
           "title": "PHP"
         },
         "py": {
@@ -734,6 +789,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -759,6 +817,9 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.py"
+          ],
           "title": "Python"
         },
         "rb": {
@@ -804,6 +865,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -829,6 +893,9 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.rb"
+          ],
           "title": "Ruby"
         },
         "ts": {
@@ -846,11 +913,6 @@
               "active": true,
               "kind": "dev",
               "version": "^25.6.0"
-            },
-            "dotenv": {
-              "active": true,
-              "kind": "dev",
-              "version": "^17.4.2"
             },
             "typescript": {
               "active": true,
@@ -879,6 +941,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -903,6 +968,14 @@
             },
             "version": "0.0.1"
           },
+          "superseded": [
+            "test/runner.ts",
+            "test/vendor/omni/compat.ts",
+            "src/feature/secrets/sekreto/Providers.ts",
+            "src/feature/secrets/sekreto/Sigv4.ts",
+            "src/feature/secrets/sekreto/provider/Registry.ts",
+            "src/feature/secrets/sekreto/provider/http.ts"
+          ],
           "title": "TypeScript"
         }
       },
