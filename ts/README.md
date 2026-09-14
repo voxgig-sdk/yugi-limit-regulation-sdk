@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { YugiLimitRegulationSDK } from '@voxgig-sdk/yugi-limit-regulation'
+import { YugiLimitRegulationSDK } from '@voxgig-sdk/yugi-limit-regulation-sdk'
 
 const client = new YugiLimitRegulationSDK()
 ```
@@ -415,7 +415,7 @@ yugi-limit-regulation/
 Import the SDK from the package root:
 
 ```ts
-import { YugiLimitRegulationSDK } from '@voxgig-sdk/yugi-limit-regulation'
+import { YugiLimitRegulationSDK } from '@voxgig-sdk/yugi-limit-regulation-sdk'
 ```
 
 ### Entity state

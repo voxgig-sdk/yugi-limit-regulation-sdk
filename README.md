@@ -105,7 +105,7 @@ local results, err = client:Currentvector():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/yugi-limit-regulation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yugi-limit-regulation-sdk/releases) |
+| TypeScript | `@voxgig-sdk/yugi-limit-regulation-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yugi-limit-regulation-sdk/releases) |
 | Python | `voxgig-sdk-yugi-limit-regulation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yugi-limit-regulation-sdk/releases) |
 | PHP | `voxgig-sdk/yugi-limit-regulation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yugi-limit-regulation-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/yugi-limit-regulation-sdk/go` | `go get github.com/voxgig-sdk/yugi-limit-regulation-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Currentvector():list()
 ### TypeScript
 
 ```ts
-import { YugiLimitRegulationSDK } from '@voxgig-sdk/yugi-limit-regulation'
+import { YugiLimitRegulationSDK } from '@voxgig-sdk/yugi-limit-regulation-sdk'
 
 const client = new YugiLimitRegulationSDK()
 
