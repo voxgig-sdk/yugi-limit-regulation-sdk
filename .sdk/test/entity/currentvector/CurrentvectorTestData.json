@@ -42,5 +42,574 @@
         "unlimited": []
       }
     }
+  },
+  "requests": {
+    "GET /genesys/current.vector.json": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getCurrentGenesysBanlist",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "A Forbidden & Limited List (banlist) containing card limitations for a specific Yu-Gi-Oh! format",
+                  "properties": {
+                    "effective": {
+                      "description": "Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD)",
+                      "format": "date",
+                      "type": "string"
+                    },
+                    "forbidden": {
+                      "description": "List of card IDs that are forbidden (cannot be used)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "format": {
+                      "description": "The game format this limit regulation applies to",
+                      "enum": [
+                        "TCG",
+                        "OCG",
+                        "OCG-AE",
+                        "OCG-CN",
+                        "Rush Duel",
+                        "Master Duel",
+                        "TCG Genesys"
+                      ],
+                      "type": "string"
+                    },
+                    "limited": {
+                      "description": "List of card IDs that are limited (only 1 copy allowed)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "name": {
+                      "description": "Name or identifier of the limit regulation",
+                      "type": "string"
+                    },
+                    "semi_limited": {
+                      "description": "List of card IDs that are semi-limited (only 2 copies allowed)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "unlimited": {
+                      "description": "List of card IDs that have been moved to unlimited (3 copies allowed)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "effective",
+                    "format"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with current TCG Genesys banlist"
+          },
+          "404": {
+            "description": "Banlist not found"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /master-duel/current.vector.json": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getCurrentMasterDuelBanlist",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "A Forbidden & Limited List (banlist) containing card limitations for a specific Yu-Gi-Oh! format",
+                  "properties": {
+                    "effective": {
+                      "description": "Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD)",
+                      "format": "date",
+                      "type": "string"
+                    },
+                    "forbidden": {
+                      "description": "List of card IDs that are forbidden (cannot be used)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "format": {
+                      "description": "The game format this limit regulation applies to",
+                      "enum": [
+                        "TCG",
+                        "OCG",
+                        "OCG-AE",
+                        "OCG-CN",
+                        "Rush Duel",
+                        "Master Duel",
+                        "TCG Genesys"
+                      ],
+                      "type": "string"
+                    },
+                    "limited": {
+                      "description": "List of card IDs that are limited (only 1 copy allowed)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "name": {
+                      "description": "Name or identifier of the limit regulation",
+                      "type": "string"
+                    },
+                    "semi_limited": {
+                      "description": "List of card IDs that are semi-limited (only 2 copies allowed)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "unlimited": {
+                      "description": "List of card IDs that have been moved to unlimited (3 copies allowed)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "effective",
+                    "format"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with current Master Duel banlist"
+          },
+          "404": {
+            "description": "Banlist not found"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /ocg-ae/current.vector.json": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getCurrentOCGAEBanlist",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "A Forbidden & Limited List (banlist) containing card limitations for a specific Yu-Gi-Oh! format",
+                  "properties": {
+                    "effective": {
+                      "description": "Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD)",
+                      "format": "date",
+                      "type": "string"
+                    },
+                    "forbidden": {
+                      "description": "List of card IDs that are forbidden (cannot be used)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "format": {
+                      "description": "The game format this limit regulation applies to",
+                      "enum": [
+                        "TCG",
+                        "OCG",
+                        "OCG-AE",
+                        "OCG-CN",
+                        "Rush Duel",
+                        "Master Duel",
+                        "TCG Genesys"
+                      ],
+                      "type": "string"
+                    },
+                    "limited": {
+                      "description": "List of card IDs that are limited (only 1 copy allowed)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "name": {
+                      "description": "Name or identifier of the limit regulation",
+                      "type": "string"
+                    },
+                    "semi_limited": {
+                      "description": "List of card IDs that are semi-limited (only 2 copies allowed)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "unlimited": {
+                      "description": "List of card IDs that have been moved to unlimited (3 copies allowed)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "effective",
+                    "format"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with current OCG-AE banlist"
+          },
+          "404": {
+            "description": "Banlist not found"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /ocg-cn/current.vector.json": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getCurrentOCGCNBanlist",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "A Forbidden & Limited List (banlist) containing card limitations for a specific Yu-Gi-Oh! format",
+                  "properties": {
+                    "effective": {
+                      "description": "Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD)",
+                      "format": "date",
+                      "type": "string"
+                    },
+                    "forbidden": {
+                      "description": "List of card IDs that are forbidden (cannot be used)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "format": {
+                      "description": "The game format this limit regulation applies to",
+                      "enum": [
+                        "TCG",
+                        "OCG",
+                        "OCG-AE",
+                        "OCG-CN",
+                        "Rush Duel",
+                        "Master Duel",
+                        "TCG Genesys"
+                      ],
+                      "type": "string"
+                    },
+                    "limited": {
+                      "description": "List of card IDs that are limited (only 1 copy allowed)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "name": {
+                      "description": "Name or identifier of the limit regulation",
+                      "type": "string"
+                    },
+                    "semi_limited": {
+                      "description": "List of card IDs that are semi-limited (only 2 copies allowed)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "unlimited": {
+                      "description": "List of card IDs that have been moved to unlimited (3 copies allowed)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "effective",
+                    "format"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with current OCG China banlist"
+          },
+          "404": {
+            "description": "Banlist not found"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /ocg/current.vector.json": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getCurrentOCGBanlist",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "A Forbidden & Limited List (banlist) containing card limitations for a specific Yu-Gi-Oh! format",
+                  "properties": {
+                    "effective": {
+                      "description": "Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD)",
+                      "format": "date",
+                      "type": "string"
+                    },
+                    "forbidden": {
+                      "description": "List of card IDs that are forbidden (cannot be used)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "format": {
+                      "description": "The game format this limit regulation applies to",
+                      "enum": [
+                        "TCG",
+                        "OCG",
+                        "OCG-AE",
+                        "OCG-CN",
+                        "Rush Duel",
+                        "Master Duel",
+                        "TCG Genesys"
+                      ],
+                      "type": "string"
+                    },
+                    "limited": {
+                      "description": "List of card IDs that are limited (only 1 copy allowed)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "name": {
+                      "description": "Name or identifier of the limit regulation",
+                      "type": "string"
+                    },
+                    "semi_limited": {
+                      "description": "List of card IDs that are semi-limited (only 2 copies allowed)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "unlimited": {
+                      "description": "List of card IDs that have been moved to unlimited (3 copies allowed)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "effective",
+                    "format"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with current OCG banlist"
+          },
+          "404": {
+            "description": "Banlist not found"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /rush/current.vector.json": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getCurrentRushBanlist",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "A Forbidden & Limited List (banlist) containing card limitations for a specific Yu-Gi-Oh! format",
+                  "properties": {
+                    "effective": {
+                      "description": "Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD)",
+                      "format": "date",
+                      "type": "string"
+                    },
+                    "forbidden": {
+                      "description": "List of card IDs that are forbidden (cannot be used)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "format": {
+                      "description": "The game format this limit regulation applies to",
+                      "enum": [
+                        "TCG",
+                        "OCG",
+                        "OCG-AE",
+                        "OCG-CN",
+                        "Rush Duel",
+                        "Master Duel",
+                        "TCG Genesys"
+                      ],
+                      "type": "string"
+                    },
+                    "limited": {
+                      "description": "List of card IDs that are limited (only 1 copy allowed)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "name": {
+                      "description": "Name or identifier of the limit regulation",
+                      "type": "string"
+                    },
+                    "semi_limited": {
+                      "description": "List of card IDs that are semi-limited (only 2 copies allowed)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "unlimited": {
+                      "description": "List of card IDs that have been moved to unlimited (3 copies allowed)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "effective",
+                    "format"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with current Rush Duel banlist"
+          },
+          "404": {
+            "description": "Banlist not found"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /tcg/current.vector.json": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getCurrentTCGBanlist",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "A Forbidden & Limited List (banlist) containing card limitations for a specific Yu-Gi-Oh! format",
+                  "properties": {
+                    "effective": {
+                      "description": "Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD)",
+                      "format": "date",
+                      "type": "string"
+                    },
+                    "forbidden": {
+                      "description": "List of card IDs that are forbidden (cannot be used)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "format": {
+                      "description": "The game format this limit regulation applies to",
+                      "enum": [
+                        "TCG",
+                        "OCG",
+                        "OCG-AE",
+                        "OCG-CN",
+                        "Rush Duel",
+                        "Master Duel",
+                        "TCG Genesys"
+                      ],
+                      "type": "string"
+                    },
+                    "limited": {
+                      "description": "List of card IDs that are limited (only 1 copy allowed)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "name": {
+                      "description": "Name or identifier of the limit regulation",
+                      "type": "string"
+                    },
+                    "semi_limited": {
+                      "description": "List of card IDs that are semi-limited (only 2 copies allowed)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "unlimited": {
+                      "description": "List of card IDs that have been moved to unlimited (3 copies allowed)",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "effective",
+                    "format"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with current TCG banlist"
+          },
+          "404": {
+            "description": "Banlist not found"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

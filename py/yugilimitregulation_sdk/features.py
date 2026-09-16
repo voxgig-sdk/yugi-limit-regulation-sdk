@@ -1,12 +1,18 @@
 # YugiLimitRegulation SDK feature factory
 
 from yugilimitregulation_sdk.feature.base_feature import YugiLimitRegulationBaseFeature
+from yugilimitregulation_sdk.feature.ratelimit_feature import YugiLimitRegulationRatelimitFeature
+from yugilimitregulation_sdk.feature.retry_feature import YugiLimitRegulationRetryFeature
 from yugilimitregulation_sdk.feature.test_feature import YugiLimitRegulationTestFeature
+from yugilimitregulation_sdk.feature.timeout_feature import YugiLimitRegulationTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: YugiLimitRegulationBaseFeature(),
+    "ratelimit": lambda: YugiLimitRegulationRatelimitFeature(),
+    "retry": lambda: YugiLimitRegulationRetryFeature(),
     "test": lambda: YugiLimitRegulationTestFeature(),
+    "timeout": lambda: YugiLimitRegulationTimeoutFeature(),
 }
 
 
