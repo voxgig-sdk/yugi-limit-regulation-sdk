@@ -105,12 +105,12 @@ local results, err = client:Currentvector():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/yugi-limit-regulation-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yugi-limit-regulation-sdk/releases) |
-| Python | `voxgig-sdk-yugi-limit-regulation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yugi-limit-regulation-sdk/releases) |
-| PHP | `voxgig-sdk/yugi-limit-regulation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yugi-limit-regulation-sdk/releases) |
+| TypeScript | `@voxgig-sdk/yugi-limit-regulation-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yugi-limit-regulation-sdk/tags) |
+| Python | `voxgig-sdk-yugi-limit-regulation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yugi-limit-regulation-sdk/tags) |
+| PHP | `voxgig-sdk/yugi-limit-regulation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yugi-limit-regulation-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/yugi-limit-regulation-sdk/go` | `go get github.com/voxgig-sdk/yugi-limit-regulation-sdk/go@latest` |
-| Ruby | `voxgig-sdk-yugi-limit-regulation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yugi-limit-regulation-sdk/releases) |
-| Lua | `voxgig-sdk-yugi-limit-regulation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yugi-limit-regulation-sdk/releases) |
+| Ruby | `voxgig-sdk-yugi-limit-regulation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yugi-limit-regulation-sdk/tags) |
+| Lua | `voxgig-sdk-yugi-limit-regulation` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yugi-limit-regulation-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/yugi-limit-regulation-sdk/go-cli` | `go install github.com/voxgig-sdk/yugi-limit-regulation-sdk/go-cli/cmd/yugi-limit-regulation@latest` |
 | Go MCP server | `github.com/voxgig-sdk/yugi-limit-regulation-sdk/go-mcp` | `go get github.com/voxgig-sdk/yugi-limit-regulation-sdk/go-mcp@latest` |
 
