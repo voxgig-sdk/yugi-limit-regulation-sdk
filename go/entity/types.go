@@ -1,7 +1,7 @@
 // Typed models for the YugiLimitRegulation SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,13 +14,6 @@ import (
 
 // Currentvector is the typed data model for the currentvector entity.
 type Currentvector struct {
-	Effective string `json:"effective"`
-	Forbidden *[]any `json:"forbidden,omitempty"`
-	Format string `json:"format"`
-	Limited *[]any `json:"limited,omitempty"`
-	Name *string `json:"name,omitempty"`
-	SemiLimited *[]any `json:"semi_limited,omitempty"`
-	Unlimited *[]any `json:"unlimited,omitempty"`
 }
 
 // CurrentvectorListMatch is the typed request payload for Currentvector.ListTyped.

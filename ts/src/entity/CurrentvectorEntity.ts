@@ -19,7 +19,6 @@ import type {
   CurrentvectorListMatch,
 } from '../YugiLimitRegulationTypes'
 
-// TODO: needs Entity superclass
 class CurrentvectorEntity extends YugiLimitRegulationEntityBase<Currentvector> {
 
   constructor(client: YugiLimitRegulationSDK, entopts: any) {

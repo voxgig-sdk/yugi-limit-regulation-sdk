@@ -43,7 +43,7 @@ local currentvectors, err = client:Currentvector():list()
 if err then error(err) end
 
 for _, item in ipairs(currentvectors) do
-  print(item["effective"])
+  print(item)
 end
 ```
 

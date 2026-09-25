@@ -16,12 +16,6 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS: Record<string, any[]> = {
   
 }
@@ -32,7 +26,6 @@ class Config {
   makeFeature(this: any, fn: string) {
     const fc = FEATURE_CLASS[fn]
     const fi = new fc()
-    // TODO: errors etc
     return fi
   }
 
@@ -138,42 +131,49 @@ class Config {
     "currentvector": {
       "fields": [
         {
-          "format": "date",
           "name": "effective",
+          "title": "Effective",
+          "type": "`$STRING`",
           "req": true,
           "short": "Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD)",
-          "type": "`$STRING`"
+          "format": "date"
         },
         {
           "name": "forbidden",
-          "short": "List of card IDs that are forbidden (cannot be used)",
-          "type": "`$ARRAY`"
+          "title": "Forbidden",
+          "type": "`$ARRAY`",
+          "short": "List of card IDs that are forbidden (cannot be used)"
         },
         {
           "name": "format",
+          "title": "Format",
+          "type": "`$STRING`",
           "req": true,
-          "short": "The game format this limit regulation applies to",
-          "type": "`$STRING`"
+          "short": "The game format this limit regulation applies to"
         },
         {
           "name": "limited",
-          "short": "List of card IDs that are limited (only 1 copy allowed)",
-          "type": "`$ARRAY`"
+          "title": "Limited",
+          "type": "`$ARRAY`",
+          "short": "List of card IDs that are limited (only 1 copy allowed)"
         },
         {
           "name": "name",
-          "short": "Name or identifier of the limit regulation",
-          "type": "`$STRING`"
+          "title": "Name",
+          "type": "`$STRING`",
+          "short": "Name or identifier of the limit regulation"
         },
         {
           "name": "semi_limited",
-          "short": "List of card IDs that are semi-limited (only 2 copies allowed)",
-          "type": "`$ARRAY`"
+          "title": "Semi Limited",
+          "type": "`$ARRAY`",
+          "short": "List of card IDs that are semi-limited (only 2 copies allowed)"
         },
         {
           "name": "unlimited",
-          "short": "List of card IDs that have been moved to unlimited (3 copies allowed)",
-          "type": "`$ARRAY`"
+          "title": "Unlimited",
+          "type": "`$ARRAY`",
+          "short": "List of card IDs that have been moved to unlimited (3 copies allowed)"
         }
       ],
       "name": "currentvector",
@@ -183,7 +183,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/genesys/current.vector.json",
@@ -195,18 +194,19 @@ class Config {
                   "lit": "current.vector.json"
                 }
               ],
-              "select": {},
+              "parts": [
+                "genesys",
+                "current.vector.json"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "genesys",
-                "current.vector.json"
-              ]
+              "args": {},
+              "select": {}
             },
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/master-duel/current.vector.json",
@@ -218,18 +218,19 @@ class Config {
                   "lit": "current.vector.json"
                 }
               ],
-              "select": {},
+              "parts": [
+                "master-duel",
+                "current.vector.json"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "master-duel",
-                "current.vector.json"
-              ]
+              "args": {},
+              "select": {}
             },
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/ocg-ae/current.vector.json",
@@ -241,18 +242,19 @@ class Config {
                   "lit": "current.vector.json"
                 }
               ],
-              "select": {},
+              "parts": [
+                "ocg-ae",
+                "current.vector.json"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "ocg-ae",
-                "current.vector.json"
-              ]
+              "args": {},
+              "select": {}
             },
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/ocg-cn/current.vector.json",
@@ -264,18 +266,19 @@ class Config {
                   "lit": "current.vector.json"
                 }
               ],
-              "select": {},
+              "parts": [
+                "ocg-cn",
+                "current.vector.json"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "ocg-cn",
-                "current.vector.json"
-              ]
+              "args": {},
+              "select": {}
             },
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/ocg/current.vector.json",
@@ -287,18 +290,19 @@ class Config {
                   "lit": "current.vector.json"
                 }
               ],
-              "select": {},
+              "parts": [
+                "ocg",
+                "current.vector.json"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "ocg",
-                "current.vector.json"
-              ]
+              "args": {},
+              "select": {}
             },
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/rush/current.vector.json",
@@ -310,18 +314,19 @@ class Config {
                   "lit": "current.vector.json"
                 }
               ],
-              "select": {},
+              "parts": [
+                "rush",
+                "current.vector.json"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "rush",
-                "current.vector.json"
-              ]
+              "args": {},
+              "select": {}
             },
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/tcg/current.vector.json",
@@ -333,15 +338,17 @@ class Config {
                   "lit": "current.vector.json"
                 }
               ],
-              "select": {},
+              "parts": [
+                "tcg",
+                "current.vector.json"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "tcg",
-                "current.vector.json"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }

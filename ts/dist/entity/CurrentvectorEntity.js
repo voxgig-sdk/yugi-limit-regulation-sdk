@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CurrentvectorEntity = void 0;
 const YugiLimitRegulationEntityBase_1 = require("../YugiLimitRegulationEntityBase");
-// TODO: needs Entity superclass
 class CurrentvectorEntity extends YugiLimitRegulationEntityBase_1.YugiLimitRegulationEntityBase {
     constructor(client, entopts) {
         super(client, entopts);

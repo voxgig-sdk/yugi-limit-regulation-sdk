@@ -1,0 +1,218 @@
+# Entity: currentvector
+
+main: kit: entity: currentvector: {
+
+  alias: field: {}
+
+  fields: {
+    effective: {
+      fo: "date"
+      h: "Effective"
+      n: "effective"
+      r: true
+      sh: "Effective date of the limit regulation in ISO 8601 format (YYYY-MM-DD)"
+      t: "`$STRING`"
+    }
+    forbidden: {
+      h: "Forbidden"
+      n: "forbidden"
+      r: false
+      sh: "List of card IDs that are forbidden (cannot be used)"
+      t: "`$ARRAY`"
+    }
+    format: {
+      h: "Format"
+      n: "format"
+      r: true
+      sh: "The game format this limit regulation applies to"
+      t: "`$STRING`"
+    }
+    limited: {
+      h: "Limited"
+      n: "limited"
+      r: false
+      sh: "List of card IDs that are limited (only 1 copy allowed)"
+      t: "`$ARRAY`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      sh: "Name or identifier of the limit regulation"
+      t: "`$STRING`"
+    }
+    semi_limited: {
+      h: "Semi Limited"
+      n: "semi_limited"
+      r: false
+      sh: "List of card IDs that are semi-limited (only 2 copies allowed)"
+      t: "`$ARRAY`"
+    }
+    unlimited: {
+      h: "Unlimited"
+      n: "unlimited"
+      r: false
+      sh: "List of card IDs that have been moved to unlimited (3 copies allowed)"
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "currentvector"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /genesys/current.vector.json"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/genesys/current.vector.json"
+          s: [
+            {
+              lit: "genesys"
+            }
+            {
+              lit: "current.vector.json"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /master-duel/current.vector.json"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/master-duel/current.vector.json"
+          s: [
+            {
+              lit: "master-duel"
+            }
+            {
+              lit: "current.vector.json"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /ocg-ae/current.vector.json"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/ocg-ae/current.vector.json"
+          s: [
+            {
+              lit: "ocg-ae"
+            }
+            {
+              lit: "current.vector.json"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /ocg-cn/current.vector.json"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/ocg-cn/current.vector.json"
+          s: [
+            {
+              lit: "ocg-cn"
+            }
+            {
+              lit: "current.vector.json"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /ocg/current.vector.json"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/ocg/current.vector.json"
+          s: [
+            {
+              lit: "ocg"
+            }
+            {
+              lit: "current.vector.json"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /rush/current.vector.json"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/rush/current.vector.json"
+          s: [
+            {
+              lit: "rush"
+            }
+            {
+              lit: "current.vector.json"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /tcg/current.vector.json"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/tcg/current.vector.json"
+          s: [
+            {
+              lit: "tcg"
+            }
+            {
+              lit: "current.vector.json"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
